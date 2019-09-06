@@ -24,21 +24,165 @@ enum custom_keycodes {
 #include "dynamic_macro.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [0] = LAYOUT_ergodox(KC_ESCAPE,KC_1,KC_2,KC_3,KC_4,KC_5,TO(6),LGUI_T(KC_TAB),KC_Q,KC_W,KC_E,KC_R,KC_T,OSL(2),OSM(MOD_LCTL),KC_A,KC_S,KC_D,KC_F,KC_G,OSM(MOD_LSFT),KC_Z,KC_X,KC_C,KC_V,KC_B,OSL(4),OSL(1),KC_GRAVE,KC_QUOTE,LALT_T(KC_LEFT),LGUI_T(KC_RIGHT),KC_ASON,KC_ASOFF,KC_HOME,OSM(MOD_LGUI),OSM(MOD_LALT),KC_END,TO(2),KC_6,KC_7,KC_8,KC_9,KC_0,KC_MINUS,OSL(2),KC_Y,KC_U,KC_I,KC_O,KC_P,KC_EQUAL,KC_H,KC_J,KC_K,KC_L,KC_SCOLON,LCTL_T(KC_ENTER),OSL(4),KC_N,KC_M,KC_COMMA,KC_DOT,KC_SLASH,KC_BSLASH,RGUI_T(KC_DOWN),RALT_T(KC_UP),KC_LBRACKET,KC_RBRACKET,LGUI(KC_SPACE),KC_INSERT,KC_DELETE,KC_PGUP,KC_PGDOWN,KC_BSPACE,KC_SPACE),
+  [0] = LAYOUT_ergodox(
+      KC_ESCAPE,       KC_1,            KC_2,            KC_3,            KC_4,             KC_5,          TO(6),
+      LGUI_T(KC_TAB),  KC_Q,            KC_W,            KC_E,            KC_R,             KC_T,          OSL(2),
+      OSM(MOD_LCTL),   KC_A,            KC_S,            KC_D,            KC_F,             KC_G,
+      OSM(MOD_LSFT),   KC_Z,            KC_X,            KC_C,            KC_V,             KC_B,          OSL(4),
+      OSL(1),          KC_GRAVE,        KC_QUOTE,        KC_LEFT,         KC_RIGHT,
+                                                                                            KC_SPACE,      KC_BSPACE,
+                                                                                                           OSM(MOD_LSFT),
+                                                                          OSM(MOD_LGUI),    OSM(MOD_LALT), OSM(MOD_LCTL),
 
-  [1] = LAYOUT_ergodox(KC_MINUS,KC_0,KC_9,KC_8,KC_7,KC_6,TO(0),KC_EQUAL,KC_P,KC_O,KC_I,KC_U,KC_Y,KC_NO,LCTL_T(KC_ENTER),KC_SCOLON,KC_L,KC_K,KC_J,KC_H,KC_BSLASH,KC_SLASH,KC_DOT,KC_COMMA,KC_M,KC_N,KC_NO,KC_TRANSPARENT,KC_LBRACKET,KC_RBRACKET,RALT_T(KC_UP),RGUI_T(KC_DOWN),KC_DELETE,KC_INSERT,KC_PGUP,KC_SPACE,KC_BSPACE,KC_PGDOWN,TO(0),KC_5,KC_4,KC_3,KC_2,KC_1,KC_ESCAPE,KC_NO,KC_T,KC_R,KC_E,KC_W,KC_Q,LGUI_T(KC_TAB),KC_G,KC_F,KC_D,KC_S,KC_A,OSM(MOD_LCTL),KC_NO,KC_B,KC_V,KC_C,KC_X,KC_Z,OSM(MOD_LSFT),LGUI_T(KC_LEFT),LALT_T(KC_RIGHT),KC_QUOTE,KC_GRAVE,TO(0),KC_ASOFF,KC_ASON,KC_HOME,KC_END,OSM(MOD_LALT),OSM(MOD_LGUI)),
+      TO(2),           KC_6,            KC_7,            KC_8,            KC_9,             KC_0,          KC_MINUS,
+      OSL(2),          KC_Y,            KC_U,            KC_I,            KC_O,             KC_P,          KC_EQUAL,
+                       KC_H,            KC_J,            KC_K,            KC_L,             KC_SCOLON,     LCTL_T(KC_ENTER),
+      OSL(4),          KC_N,            KC_M,            KC_COMMA,        KC_DOT,           KC_SLASH,      KC_BSLASH,
+                                        KC_DOWN,         KC_UP,           KC_LBRACKET,      KC_RBRACKET,   LGUI(KC_SPACE),
+      OSM(MOD_RALT),   OSM(MOD_RGUI),
+      OSM(MOD_RSFT), 
+      OSM(MOD_RCTL),   KC_BSPACE,       KC_SPACE
+    ), 
 
-  [2] = LAYOUT_ergodox(KC_TRANSPARENT,KC_F1,KC_F2,KC_F3,KC_F4,KC_F5,TO(0),KC_TRANSPARENT,KC_F6,KC_F7,KC_F8,KC_F9,KC_F10,KC_TRANSPARENT,KC_TRANSPARENT,KC_F11,KC_F12,KC_F13,KC_F14,KC_F15,KC_TRANSPARENT,KC_F16,KC_F17,KC_F18,KC_F19,KC_F20,KC_NO,OSL(3),KC_F21,KC_F22,KC_F23,KC_F24,HSV_200_255_255,HSV_0_255_255,RGB_HUI,RGB_MOD,RGB_SLD,RGB_HUD,TO(4),KC_AUDIO_VOL_DOWN,KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,KC_AUDIO_VOL_UP,KC_AUDIO_MUTE,KC_TRANSPARENT,KC_MS_ACCEL0,KC_MS_BTN1,KC_MS_UP,KC_MS_BTN2,DYN_REC_START1,DYN_MACRO_PLAY1,KC_MS_ACCEL1,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,DYN_REC_START2,DYN_MACRO_PLAY2,KC_NO,KC_MS_ACCEL2,KC_MS_BTN3,KC_MS_WH_UP,KC_MS_BTN4,KC_MS_BTN5,DYN_REC_STOP,KC_MS_WH_LEFT,KC_MS_WH_DOWN,KC_MS_WH_RIGHT,RESET,TO(0),HSV_86_255_255,HSV_172_255_255,RGB_VAI,RGB_VAD,TOGGLE_LAYER_COLOR,RGB_TOG),
+  [1] = LAYOUT_ergodox(
+      KC_MINUS,         KC_0,            KC_9,            KC_8,             KC_7,            KC_6,      TO(0),
+      KC_EQUAL,         KC_P,            KC_O,            KC_I,             KC_U,            KC_Y,      KC_NO,
+      LCTL_T(KC_ENTER), KC_SCOLON,       KC_L,            KC_K,             KC_J,            KC_H,
+      KC_BSLASH,        KC_SLASH,        KC_DOT,          KC_COMMA,         KC_M,            KC_N,      KC_NO,
+      KC_TRANSPARENT,   KC_LBRACKET,     KC_RBRACKET,     KC_UP,            KC_DOWN,
+                                                                                             KC_DELETE, KC_INSERT,
+                                                                                                        KC_PGUP,
+                                                                            KC_SPACE,        KC_BSPACE, KC_PGDOWN,
 
-  [3] = LAYOUT_ergodox(KC_AUDIO_MUTE,KC_AUDIO_VOL_DOWN,KC_MEDIA_PREV_TRACK,KC_MEDIA_PLAY_PAUSE,KC_MEDIA_NEXT_TRACK,KC_AUDIO_VOL_UP,TO(2),DYN_MACRO_PLAY1,DYN_REC_START1,KC_MS_BTN1,KC_MS_UP,KC_MS_BTN2,KC_MS_ACCEL0,KC_NO,DYN_MACRO_PLAY2,DYN_REC_START2,KC_MS_LEFT,KC_MS_DOWN,KC_MS_RIGHT,KC_MS_ACCEL1,DYN_REC_STOP,KC_MS_BTN5,KC_MS_BTN4,KC_MS_WH_UP,KC_MS_BTN3,KC_MS_ACCEL2,KC_NO,KC_TRANSPARENT,RESET,KC_MS_WH_LEFT,KC_MS_WH_DOWN,KC_MS_WH_RIGHT,HSV_172_255_255,HSV_86_255_255,RGB_VAI,RGB_TOG,TOGGLE_LAYER_COLOR,RGB_VAD,TO(2),KC_F1,KC_F2,KC_F3,KC_F2,KC_F5,KC_ESCAPE,KC_NO,KC_F6,KC_F7,KC_F8,KC_F9,KC_F10,LGUI_T(KC_TAB),KC_F11,KC_F12,KC_F13,KC_F14,KC_F15,OSM(MOD_LCTL),KC_NO,KC_F16,KC_F17,KC_F18,KC_F19,KC_F20,OSM(MOD_LSFT),KC_F21,KC_F22,KC_F23,KC_F24,TO(0),HSV_0_255_255,HSV_200_255_255,RGB_VAI,RGB_HUD,RGB_SLD,RGB_MOD),
+      TO(0),            KC_5,            KC_4,            KC_3,             KC_2,            KC_1,      KC_ESCAPE,
+      KC_NO,            KC_T,            KC_R,            KC_E,             KC_W,            KC_Q,      LGUI_T(KC_TAB),
+                        KC_G,            KC_F,            KC_D,             KC_S,            KC_A,      OSM(MOD_LCTL),
+      KC_NO,            KC_B,            KC_V,            KC_C,             KC_X,            KC_Z,      OSM(MOD_LSFT),
+                                         KC_LEFT,         KC_RIGHT,         KC_QUOTE,        KC_GRAVE,  TO(0),
+      KC_ASOFF,         KC_ASON,
+      KC_HOME,
+      KC_END,           OSM(MOD_LALT),   OSM(MOD_LGUI)
+    ), 
 
-  [4] = LAYOUT_ergodox(KC_TRANSPARENT,KC_AMPR,KC_PIPE,KC_EXLM,KC_EQUAL,KC_NO,TO(2),KC_TRANSPARENT,KC_HASH,KC_PERC,KC_LCBR,KC_RCBR,KC_NO,KC_NO,KC_TRANSPARENT,KC_DLR,KC_AT,KC_LPRN,KC_RPRN,KC_NO,KC_TRANSPARENT,KC_TILD,KC_CIRC,KC_LBRACKET,KC_RBRACKET,KC_NO,KC_TRANSPARENT,OSL(5),KC_LABK,KC_PIPE,KC_MINUS,KC_RABK,LCTL(KC_LEFT),LCTL(KC_RIGHT),KC_F9,KC_F11,KC_F12,KC_F13,TO(6),KC_C,KC_7,KC_8,KC_9,KC_SLASH,KC_EXLM,KC_NO,LGUI(KC_BSPACE),KC_4,KC_5,KC_6,KC_KP_ASTERISK,KC_CIRC,KC_BSPACE,KC_1,KC_2,KC_3,KC_KP_MINUS,LCTL_T(KC_ENTER),KC_TRANSPARENT,KC_DELETE,KC_KP_0,KC_KP_DOT,KC_EQUAL,KC_KP_PLUS,OSM(MOD_LSFT),LALT(KC_P),KC_COMMA,KC_LPRN,KC_RPRN,TO(0),LCTL(KC_DOWN),LCTL(KC_UP),KC_ASUP,KC_ASDN,KC_ASRP,KC_ASTG),
+  [2] = LAYOUT_ergodox(
+      KC_TRANSPARENT,  KC_F1,              KC_F2,               KC_F3,               KC_F4,               KC_F5,           TO(0),
+      KC_TRANSPARENT,  KC_F6,              KC_F7,               KC_F8,               KC_F9,               KC_F10,          KC_TRANSPARENT,
+      KC_TRANSPARENT,  KC_F11,             KC_F12,              KC_F13,              KC_F14,              KC_F15,
+      KC_TRANSPARENT,  KC_F16,             KC_F17,              KC_F18,              KC_F19,              KC_F20,          KC_NO,
+      OSL(3),          KC_F21,             KC_F22,              KC_F23,              KC_F24,
+                                                                                                          HSV_200_255_255, HSV_0_255_255,
+                                                                                                          RGB_HUI,
+                                                                                     RGB_MOD,             RGB_SLD,         RGB_HUD,
 
-  [5] = LAYOUT_ergodox(KC_EXLM,KC_SLASH,KC_7,KC_8,KC_9,KC_C,TO(4),KC_CIRC,KC_KP_ASTERISK,KC_4,KC_5,KC_6,LGUI(KC_BSPACE),KC_NO,LCTL_T(KC_ENTER),KC_MINUS,KC_1,KC_2,KC_3,KC_BSPACE,OSM(MOD_LSFT),KC_KP_PLUS,KC_EQUAL,KC_0,KC_DOT,KC_DELETE,KC_NO,KC_TRANSPARENT,KC_LPRN,KC_RPRN,LALT(KC_P),KC_COMMA,LCTL(KC_UP),LCTL(KC_DOWN),KC_ASUP,KC_ASTG,KC_ASRP,KC_ASDN,TO(4),KC_NO,KC_AMPR,KC_PIPE,KC_EXLM,KC_EQUAL,KC_ESCAPE,KC_NO,KC_NO,KC_HASH,KC_PERC,KC_LCBR,KC_RCBR,LGUI_T(KC_TAB),KC_NO,KC_DLR,KC_AT,KC_LPRN,KC_RPRN,OSM(MOD_LCTL),KC_NO,KC_NO,KC_TILD,KC_CIRC,KC_LBRACKET,KC_RBRACKET,OSM(MOD_LSFT),KC_LABK,KC_PIPE,KC_KP_MINUS,KC_RABK,TO(0),LCTL(KC_LEFT),LCTL(KC_RIGHT),KC_F9,KC_F13,KC_F12,KC_F11),
+      TO(4),           KC_AUDIO_VOL_DOWN,  KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, KC_AUDIO_VOL_UP, KC_AUDIO_MUTE,
+      KC_TRANSPARENT,  KC_MS_ACCEL0,       KC_MS_BTN1,          KC_MS_UP,            KC_MS_BTN2,          DYN_REC_START1,  DYN_MACRO_PLAY1,
+                       KC_MS_ACCEL1,       KC_MS_LEFT,          KC_MS_DOWN,          KC_MS_RIGHT,         DYN_REC_START2,  DYN_MACRO_PLAY2,
+      KC_NO,           KC_MS_ACCEL2,       KC_MS_BTN3,          KC_MS_WH_UP,         KC_MS_BTN4,          KC_MS_BTN5,      DYN_REC_STOP,
+                                           KC_MS_WH_LEFT,       KC_MS_WH_DOWN,       KC_MS_WH_RIGHT,      RESET,           TO(0),
+      HSV_86_255_255,  HSV_172_255_255,
+      RGB_VAI,
+      RGB_VAD,         TOGGLE_LAYER_COLOR, RGB_TOG
+    ), 
 
-  [6] = LAYOUT_ergodox(KC_ESCAPE,KC_1,KC_2,KC_3,KC_4,KC_5,TO(4),KC_TAB,KC_Q,KC_W,KC_E,KC_R,KC_T,KC_NO,KC_LCTRL,KC_A,KC_S,KC_D,KC_F,KC_G,KC_LSHIFT,KC_Z,KC_X,KC_C,KC_V,KC_B,KC_NO,OSL(7),KC_GRAVE,KC_QUOTE,KC_LALT,KC_LGUI,KC_LBRACKET,KC_RBRACKET,KC_HOME,KC_SPACE,KC_ENTER,KC_END,TO(0),KC_6,KC_7,KC_8,KC_9,KC_0,KC_MINUS,KC_NO,KC_Y,KC_U,KC_I,KC_O,KC_P,KC_EQUAL,KC_H,KC_J,KC_K,KC_L,KC_SCOLON,KC_BSLASH,KC_NO,KC_N,KC_M,KC_UP,KC_COMMA,KC_DOT,KC_SLASH,KC_LEFT,KC_DOWN,KC_RIGHT,KC_RCTRL,TO(0),KC_INSERT,KC_DELETE,KC_PGUP,KC_PGDOWN,KC_BSPACE,KC_SPACE),
+  [3] = LAYOUT_ergodox(
+      KC_AUDIO_MUTE,   KC_AUDIO_VOL_DOWN,  KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, KC_AUDIO_VOL_UP,    TO(2),
+      DYN_MACRO_PLAY1, DYN_REC_START1,     KC_MS_BTN1,          KC_MS_UP,            KC_MS_BTN2,          KC_MS_ACCEL0,       KC_NO,
+      DYN_MACRO_PLAY2, DYN_REC_START2,     KC_MS_LEFT,          KC_MS_DOWN,          KC_MS_RIGHT,         KC_MS_ACCEL1,
+      DYN_REC_STOP,    KC_MS_BTN5,         KC_MS_BTN4,          KC_MS_WH_UP,         KC_MS_BTN3,          KC_MS_ACCEL2,       KC_NO,
+      KC_TRANSPARENT,  RESET,              KC_MS_WH_LEFT,       KC_MS_WH_DOWN,       KC_MS_WH_RIGHT,
+                                                                                                          HSV_172_255_255,    HSV_86_255_255,
+                                                                                                                              RGB_VAI,
+                                                                                     RGB_TOG,             TOGGLE_LAYER_COLOR, RGB_VAD,
 
-  [7] = LAYOUT_ergodox(KC_MINUS,KC_0,KC_9,KC_8,KC_7,KC_6,TO(6),KC_EQUAL,KC_P,KC_O,KC_I,KC_U,KC_Y,KC_NO,KC_BSLASH,KC_SCOLON,KC_L,KC_K,KC_J,KC_H,KC_SLASH,KC_DOT,KC_COMMA,KC_UP,KC_M,KC_N,KC_NO,KC_TRANSPARENT,KC_RCTRL,KC_LEFT,KC_DOWN,KC_RIGHT,KC_DELETE,KC_INSERT,KC_PGUP,KC_SPACE,KC_BSPACE,KC_PGDOWN,TO(6),KC_5,KC_4,KC_3,KC_2,KC_1,KC_ESCAPE,KC_NO,KC_T,KC_R,KC_E,KC_W,KC_Q,KC_TAB,KC_G,KC_F,KC_A,KC_S,KC_D,KC_LCTRL,KC_NO,KC_B,KC_V,KC_C,KC_X,KC_Z,KC_RSHIFT,KC_LGUI,KC_LALT,KC_QUOTE,KC_GRAVE,TO(0),KC_LBRACKET,KC_RBRACKET,KC_HOME,KC_END,KC_ENTER,KC_SPACE),
+      TO(2),           KC_F1,              KC_F2,               KC_F3,               KC_F2,               KC_F5,              KC_ESCAPE,
+      KC_NO,           KC_F6,              KC_F7,               KC_F8,               KC_F9,               KC_F10,             LGUI_T(KC_TAB),
+                       KC_F11,             KC_F12,              KC_F13,              KC_F14,              KC_F15,             OSM(MOD_LCTL),
+      KC_NO,           KC_F16,             KC_F17,              KC_F18,              KC_F19,              KC_F20,             OSM(MOD_LSFT),
+                                           KC_F21,              KC_F22,              KC_F23,              KC_F24,             TO(0),
+      HSV_0_255_255,   HSV_200_255_255,
+      RGB_VAI,
+      RGB_HUD,         RGB_SLD,            RGB_MOD
+    ), 
+
+  [4] = LAYOUT_ergodox(
+      KC_TRANSPARENT, KC_AMPR,         KC_PIPE,    KC_EXLM,     KC_EQUAL,      KC_NO,          TO(2),
+      KC_TRANSPARENT, KC_HASH,         KC_PERC,    KC_LCBR,     KC_RCBR,       KC_NO,          KC_NO,
+      KC_TRANSPARENT, KC_DLR,          KC_AT,      KC_LPRN,     KC_RPRN,       KC_NO,
+      KC_TRANSPARENT, KC_TILD,         KC_CIRC,    KC_LBRACKET, KC_RBRACKET,   KC_NO,          KC_TRANSPARENT,
+      OSL(5),         KC_LABK,         KC_PIPE,    KC_MINUS,    KC_RABK,
+                                                                               LCTL(KC_LEFT),  LCTL(KC_RIGHT),
+                                                                                               KC_F9,
+                                                                KC_F11,        KC_F12,         KC_F13,
+
+      TO(6),          KC_C,            KC_7,       KC_8,        KC_9,          KC_SLASH,       KC_EXLM,
+      KC_NO,          LGUI(KC_BSPACE), KC_4,       KC_5,        KC_6,          KC_KP_ASTERISK, KC_CIRC,
+                      KC_BSPACE,       KC_1,       KC_2,        KC_3,          KC_KP_MINUS,    LCTL_T(KC_ENTER),
+      KC_TRANSPARENT, KC_DELETE,       KC_KP_0,    KC_KP_DOT,   KC_EQUAL,      KC_KP_PLUS,     OSM(MOD_LSFT),
+                                       LALT(KC_P), KC_COMMA,    KC_LPRN,       KC_RPRN,        TO(0),
+      LCTL(KC_DOWN),  LCTL(KC_UP),
+      KC_ASUP,
+      KC_ASDN,        KC_ASRP,         KC_ASTG
+    ),
+
+  [5] = LAYOUT_ergodox(
+      KC_EXLM,          KC_SLASH,       KC_7,     KC_8,       KC_9,        KC_C,            TO(4),
+      KC_CIRC,          KC_KP_ASTERISK, KC_4,     KC_5,       KC_6,        LGUI(KC_BSPACE), KC_NO,
+      LCTL_T(KC_ENTER), KC_MINUS,       KC_1,     KC_2,       KC_3,        KC_BSPACE,
+      OSM(MOD_LSFT),    KC_KP_PLUS,     KC_EQUAL, KC_0,       KC_DOT,      KC_DELETE,       KC_NO,
+      KC_TRANSPARENT,   KC_LPRN,        KC_RPRN,  LALT(KC_P), KC_COMMA,
+                                                                           LCTL(KC_UP),     LCTL(KC_DOWN),
+                                                                                            KC_ASUP,
+                                                              KC_ASTG,     KC_ASRP,         KC_ASDN,
+
+      TO(4),            KC_NO,          KC_AMPR,  KC_PIPE,    KC_EXLM,     KC_EQUAL,        KC_ESCAPE,
+      KC_NO,            KC_NO,          KC_HASH,  KC_PERC,    KC_LCBR,     KC_RCBR,         LGUI_T(KC_TAB),
+                        KC_NO,          KC_DLR,   KC_AT,      KC_LPRN,     KC_RPRN,         OSM(MOD_LCTL),
+      KC_NO,            KC_NO,          KC_TILD,  KC_CIRC,    KC_LBRACKET, KC_RBRACKET,     OSM(MOD_LSFT),
+                                        KC_LABK,  KC_PIPE,    KC_KP_MINUS, KC_RABK,         TO(0),
+      LCTL(KC_LEFT),    LCTL(KC_RIGHT),
+      KC_F9,
+      KC_F13,           KC_F12,         KC_F11
+    ), 
+
+  [6] = LAYOUT_ergodox(
+      KC_ESCAPE,   KC_1,        KC_2,     KC_3,    KC_4,        KC_5,        TO(4),
+      KC_TAB,      KC_Q,        KC_W,     KC_E,    KC_R,        KC_T,        KC_NO,
+      KC_LCTRL,    KC_A,        KC_S,     KC_D,    KC_F,        KC_G,
+      KC_LSHIFT,   KC_Z,        KC_X,     KC_C,    KC_V,        KC_B,        KC_NO,
+      OSL(7),      KC_GRAVE,    KC_QUOTE, KC_LALT, KC_LGUI,
+                                                                KC_LBRACKET, KC_RBRACKET,
+                                                                             KC_HOME,
+                                                   KC_SPACE,    KC_ENTER,    KC_END,
+
+      TO(0),       KC_6,        KC_7,     KC_8,    KC_9,        KC_0,        KC_MINUS,
+      KC_NO,       KC_Y,        KC_U,     KC_I,    KC_O,        KC_P,        KC_EQUAL,
+                   KC_H,        KC_J,     KC_K,    KC_L,        KC_SCOLON,   KC_BSLASH,
+      KC_NO,       KC_N,        KC_M,     KC_UP,   KC_COMMA,    KC_DOT,      KC_SLASH,
+                                KC_LEFT,  KC_DOWN, KC_RIGHT,    KC_RCTRL,    TO(0),
+      KC_INSERT,   KC_DELETE,
+      KC_PGUP,
+      KC_PGDOWN,   KC_BSPACE,   KC_SPACE
+    ), 
+
+  [7] = LAYOUT_ergodox(
+      KC_MINUS,       KC_0,        KC_9,      KC_8,    KC_7,      KC_6,      TO(6),
+      KC_EQUAL,       KC_P,        KC_O,      KC_I,    KC_U,      KC_Y,      KC_NO,
+      KC_BSLASH,      KC_SCOLON,   KC_L,      KC_K,    KC_J,      KC_H,
+      KC_SLASH,       KC_DOT,      KC_COMMA,  KC_UP,   KC_M,      KC_N,      KC_NO,
+      KC_TRANSPARENT, KC_RCTRL,    KC_LEFT,   KC_DOWN, KC_RIGHT,
+                                                                  KC_DELETE, KC_INSERT,
+                                                                             KC_PGUP,
+                                                       KC_SPACE,  KC_BSPACE, KC_PGDOWN,
+
+      TO(6),          KC_5,        KC_4,      KC_3,    KC_2,      KC_1,      KC_ESCAPE,
+      KC_NO,          KC_T,        KC_R,      KC_E,    KC_W,      KC_Q,      KC_TAB,
+                      KC_G,        KC_F,      KC_A,    KC_S,      KC_D,      KC_LCTRL,
+      KC_NO,          KC_B,        KC_V,      KC_C,    KC_X,      KC_Z,      KC_RSHIFT,
+                                   KC_LGUI,   KC_LALT, KC_QUOTE,  KC_GRAVE,  TO(0),
+      KC_LBRACKET,    KC_RBRACKET,
+      KC_HOME,
+      KC_END,         KC_ENTER,    KC_SPACE
+    ), 
 
 };
 
@@ -163,52 +307,18 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 uint32_t layer_state_set_user(uint32_t state) {
-  uint8_t layer = biton32(state);
-
+  uint8_t brightness = biton32(state) * (LED_BRIGHTNESS_HI / 7);
   ergodox_right_led_1_off();
-  ergodox_right_led_2_off();
-  switch (layer) {
-    case 1:
-      ergodox_right_led_1_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_2_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_1_on();
-      ergodox_right_led_2_on();
-      break;
-    case 2:
-      ergodox_right_led_1_set(LED_BRIGHTNESS_HI);
-      ergodox_right_led_1_on();
-      break;
-    case 3:
-      ergodox_right_led_1_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_1_on();
-      break;
-    case 4:
-      ergodox_right_led_2_set(LED_BRIGHTNESS_HI);
-      ergodox_right_led_2_on();
-      break;
-    case 5:
-      ergodox_right_led_2_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_2_on();
-      break;
-    case 6:
-      ergodox_right_led_1_set(LED_BRIGHTNESS_HI);
-      ergodox_right_led_2_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_1_on();
-      ergodox_right_led_2_on();
-      break;
-    case 7:
-      ergodox_right_led_1_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_2_set(LED_BRIGHTNESS_HI);
-      ergodox_right_led_1_on();
-      ergodox_right_led_2_on();
-      break;
-    default:
-      break;
+
+  if (brightness) {
+    ergodox_right_led_1_set(brightness);
+    ergodox_right_led_1_on();
   }
+
   return state;
 };
 
-void oneshot_mods_leds(uint8_t mods) {
+uint8_t calc_mods_brightness(uint8_t mods) {
   uint8_t brightness = 0;
   uint8_t step = LED_BRIGHTNESS_HI / 4;
 
@@ -225,19 +335,25 @@ void oneshot_mods_leds(uint8_t mods) {
     brightness += step;
   }
 
-  ergodox_right_led_3_set(brightness);
+  return brightness;
+};
+
+void oneshot_mods_changed_user(uint8_t mods) {
+  ergodox_right_led_2_set(calc_mods_brightness(mods));
+  
+  if (mods) {
+    ergodox_right_led_2_on();
+  } else {
+    ergodox_right_led_2_off();
+  }
+};
+
+void oneshot_locked_mods_changed_user(uint8_t mods) {
+  ergodox_right_led_3_set(calc_mods_brightness(mods));
   
   if (mods) {
     ergodox_right_led_3_on();
   } else {
     ergodox_right_led_3_off();
   }
-};
-
-void oneshot_mods_changed_user(uint8_t mods) {
-  oneshot_mods_leds(mods);
-};
-
-void oneshot_locked_mods_changed_user(uint8_t mods) {
-  oneshot_mods_leds(mods);
 };
