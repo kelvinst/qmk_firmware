@@ -1,0 +1,31 @@
+/*
+  Set any config.h overrides for your specific keymap here.
+  See config.h options at https://docs.qmk.fm/#/config_options?id=the-configh-file
+*/
+#define ONESHOT_TAP_TOGGLE 3
+
+#undef ONESHOT_TIMEOUT
+#define ONESHOT_TIMEOUT 1507
+
+#undef RGBLIGHT_HUE_STEP
+#define RGBLIGHT_HUE_STEP 6
+
+#undef RGBLIGHT_BRI_STEP
+#define RGBLIGHT_BRI_STEP 6
+
+#undef MOUSEKEY_MAX_SPEED
+#define MOUSEKEY_MAX_SPEED 2
+
+#undef MOUSEKEY_TIME_TO_MAX
+#define MOUSEKEY_TIME_TO_MAX 20
+
+#undef MOUSEKEY_WHEEL_MAX_SPEED
+#define MOUSEKEY_WHEEL_MAX_SPEED 2
+
+#undef MOUSEKEY_WHEEL_TIME_TO_MAX
+#define MOUSEKEY_WHEEL_TIME_TO_MAX 80
+
+#define DISABLE_RGB_MATRIX_DIGITAL_RAIN
+#define DISABLE_RGB_MATRIX_ALPHAS_MODS
+#define DISABLE_RGB_MATRIX_JELLYBEAN_RAINDROPS
+#define DISABLE_RGB_MATRIX_RAINDROPS
