@@ -164,7 +164,7 @@ uint32_t layer_state_set_user(uint32_t state) {
   ergodox_right_led_2_off();
   ergodox_right_led_3_off();
   switch (layer) {
-    case 2:
+    case 1:
       ergodox_right_led_1_set(LED_BRIGHTNESS_LO);
       ergodox_right_led_2_set(LED_BRIGHTNESS_LO);
       ergodox_right_led_3_set(LED_BRIGHTNESS_LO);
