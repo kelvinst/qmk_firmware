@@ -163,21 +163,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 uint32_t layer_state_set_user(uint32_t state) {
-
   uint8_t layer = biton32(state);
 
-  ergodox_board_led_off();
   ergodox_right_led_1_off();
   ergodox_right_led_2_off();
-  ergodox_right_led_3_off();
   switch (layer) {
     case 1:
       ergodox_right_led_1_set(LED_BRIGHTNESS_LO);
       ergodox_right_led_2_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_3_set(LED_BRIGHTNESS_LO);
       ergodox_right_led_1_on();
       ergodox_right_led_2_on();
-      ergodox_right_led_3_on();
       break;
     case 2:
       ergodox_right_led_1_set(LED_BRIGHTNESS_HI);
@@ -196,15 +191,53 @@ uint32_t layer_state_set_user(uint32_t state) {
       ergodox_right_led_2_on();
       break;
     case 6:
-      ergodox_right_led_3_set(LED_BRIGHTNESS_HI);
-      ergodox_right_led_3_on();
+      ergodox_right_led_1_set(LED_BRIGHTNESS_HI);
+      ergodox_right_led_2_set(LED_BRIGHTNESS_LO);
+      ergodox_right_led_1_on();
+      ergodox_right_led_2_on();
       break;
     case 7:
-      ergodox_right_led_3_set(LED_BRIGHTNESS_LO);
-      ergodox_right_led_3_on();
+      ergodox_right_led_1_set(LED_BRIGHTNESS_LO);
+      ergodox_right_led_2_set(LED_BRIGHTNESS_HI);
+      ergodox_right_led_1_on();
+      ergodox_right_led_2_on();
       break;
     default:
       break;
   }
   return state;
+};
+
+void oneshot_mods_leds(uint8_t mods) {
+  uint8_t brightness = 0;
+  uint8_t step = LED_BRIGHTNESS_HI / 4;
+
+  if (mods & MOD_MASK_SHIFT) {
+    brightness += step;
+  }
+  if (mods & MOD_MASK_CTRL) {
+    brightness += step;
+  }
+  if (mods & MOD_MASK_ALT) {
+    brightness += step;
+  }
+  if (mods & MOD_MASK_GUI) {
+    brightness += step;
+  }
+
+  ergodox_right_led_3_set(brightness);
+  
+  if (mods) {
+    ergodox_right_led_3_on();
+  } else {
+    ergodox_right_led_3_off();
+  }
+};
+
+void oneshot_mods_changed_user(uint8_t mods) {
+  oneshot_mods_leds(mods);
+};
+
+void oneshot_locked_mods_changed_user(uint8_t mods) {
+  oneshot_mods_leds(mods);
 };
