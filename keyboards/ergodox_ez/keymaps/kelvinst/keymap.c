@@ -26,7 +26,7 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_ergodox(
       KC_ESCAPE,       KC_1,            KC_2,            KC_3,            KC_4,             KC_5,          TO(6),
-      LGUI_T(KC_TAB),  KC_Q,            KC_W,            KC_E,            KC_R,             KC_T,          OSL(2),
+      LGUI_T(KC_TAB),  KC_Q,            KC_W,            KC_E,            KC_R,             KC_T,          OSL(2), 
       OSM(MOD_LCTL),   KC_A,            KC_S,            KC_D,            KC_F,             KC_G,
       OSM(MOD_LSFT),   KC_Z,            KC_X,            KC_C,            KC_V,             KC_B,          OSL(4),
       OSL(1),          KC_GRAVE,        KC_QUOTE,        KC_LEFT,         KC_RIGHT,
@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       OSL(2),          KC_Y,            KC_U,            KC_I,            KC_O,             KC_P,          KC_EQUAL,
                        KC_H,            KC_J,            KC_K,            KC_L,             KC_SCOLON,     LCTL_T(KC_ENTER),
       OSL(4),          KC_N,            KC_M,            KC_COMMA,        KC_DOT,           KC_SLASH,      KC_BSLASH,
-                                        KC_DOWN,         KC_UP,           KC_LBRACKET,      KC_RBRACKET,   LGUI(KC_SPACE),
+                                        KC_DOWN,         KC_UP,           KC_LBRACKET,      KC_RBRACKET,   OSL(1),
       OSM(MOD_RALT),   OSM(MOD_RGUI),
       OSM(MOD_RSFT), 
       OSM(MOD_RCTL),   KC_BSPACE,       KC_SPACE
@@ -58,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,            KC_T,            KC_R,            KC_E,             KC_W,            KC_Q,      LGUI_T(KC_TAB),
                         KC_G,            KC_F,            KC_D,             KC_S,            KC_A,      OSM(MOD_LCTL),
       KC_NO,            KC_B,            KC_V,            KC_C,             KC_X,            KC_Z,      OSM(MOD_LSFT),
-                                         KC_LEFT,         KC_RIGHT,         KC_QUOTE,        KC_GRAVE,  TO(0),
+                                         KC_LEFT,         KC_RIGHT,         KC_QUOTE,        KC_GRAVE,  KC_TRANSPARENT,
       KC_ASOFF,         KC_ASON,
       KC_HOME,
       KC_END,           OSM(MOD_LALT),   OSM(MOD_LGUI)
@@ -78,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TRANSPARENT,  KC_MS_ACCEL0,       KC_MS_BTN1,          KC_MS_UP,            KC_MS_BTN2,          DYN_REC_START1,  DYN_MACRO_PLAY1,
                        KC_MS_ACCEL1,       KC_MS_LEFT,          KC_MS_DOWN,          KC_MS_RIGHT,         DYN_REC_START2,  DYN_MACRO_PLAY2,
       KC_NO,           KC_MS_ACCEL2,       KC_MS_BTN3,          KC_MS_WH_UP,         KC_MS_BTN4,          KC_MS_BTN5,      DYN_REC_STOP,
-                                           KC_MS_WH_LEFT,       KC_MS_WH_DOWN,       KC_MS_WH_RIGHT,      RESET,           TO(0),
+                                           KC_MS_WH_LEFT,       KC_MS_WH_DOWN,       KC_MS_WH_RIGHT,      RESET,           OSL(3),
       HSV_86_255_255,  HSV_172_255_255,
       RGB_VAI,
       RGB_VAD,         TOGGLE_LAYER_COLOR, RGB_TOG
@@ -98,7 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,           KC_F6,              KC_F7,               KC_F8,               KC_F9,               KC_F10,             LGUI_T(KC_TAB),
                        KC_F11,             KC_F12,              KC_F13,              KC_F14,              KC_F15,             OSM(MOD_LCTL),
       KC_NO,           KC_F16,             KC_F17,              KC_F18,              KC_F19,              KC_F20,             OSM(MOD_LSFT),
-                                           KC_F21,              KC_F22,              KC_F23,              KC_F24,             TO(0),
+                                           KC_F21,              KC_F22,              KC_F23,              KC_F24,             KC_TRANSPARENT,
       HSV_0_255_255,   HSV_200_255_255,
       RGB_VAI,
       RGB_HUD,         RGB_SLD,            RGB_MOD
@@ -118,7 +118,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,          LGUI(KC_BSPACE), KC_4,       KC_5,        KC_6,          KC_KP_ASTERISK, KC_CIRC,
                       KC_BSPACE,       KC_1,       KC_2,        KC_3,          KC_KP_MINUS,    LCTL_T(KC_ENTER),
       KC_TRANSPARENT, KC_DELETE,       KC_KP_0,    KC_KP_DOT,   KC_EQUAL,      KC_KP_PLUS,     OSM(MOD_LSFT),
-                                       LALT(KC_P), KC_COMMA,    KC_LPRN,       KC_RPRN,        TO(0),
+                                       LALT(KC_P), KC_COMMA,    KC_LPRN,       KC_RPRN,        OSL(5),
       LCTL(KC_DOWN),  LCTL(KC_UP),
       KC_ASUP,
       KC_ASDN,        KC_ASRP,         KC_ASTG
@@ -138,7 +138,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,            KC_NO,          KC_HASH,  KC_PERC,    KC_LCBR,     KC_RCBR,         LGUI_T(KC_TAB),
                         KC_NO,          KC_DLR,   KC_AT,      KC_LPRN,     KC_RPRN,         OSM(MOD_LCTL),
       KC_NO,            KC_NO,          KC_TILD,  KC_CIRC,    KC_LBRACKET, KC_RBRACKET,     OSM(MOD_LSFT),
-                                        KC_LABK,  KC_PIPE,    KC_KP_MINUS, KC_RABK,         TO(0),
+                                        KC_LABK,  KC_PIPE,    KC_KP_MINUS, KC_RABK,         KC_TRANSPARENT,
       LCTL(KC_LEFT),    LCTL(KC_RIGHT),
       KC_F9,
       KC_F13,           KC_F12,         KC_F11
@@ -158,7 +158,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,       KC_Y,        KC_U,     KC_I,    KC_O,        KC_P,        KC_EQUAL,
                    KC_H,        KC_J,     KC_K,    KC_L,        KC_SCOLON,   KC_BSLASH,
       KC_NO,       KC_N,        KC_M,     KC_UP,   KC_COMMA,    KC_DOT,      KC_SLASH,
-                                KC_LEFT,  KC_DOWN, KC_RIGHT,    KC_RCTRL,    TO(0),
+                                KC_LEFT,  KC_DOWN, KC_RIGHT,    KC_RCTRL,    OSL(7),
       KC_INSERT,   KC_DELETE,
       KC_PGUP,
       KC_PGDOWN,   KC_BSPACE,   KC_SPACE
@@ -178,7 +178,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_NO,          KC_T,        KC_R,      KC_E,    KC_W,      KC_Q,      KC_TAB,
                       KC_G,        KC_F,      KC_A,    KC_S,      KC_D,      KC_LCTRL,
       KC_NO,          KC_B,        KC_V,      KC_C,    KC_X,      KC_Z,      KC_RSHIFT,
-                                   KC_LGUI,   KC_LALT, KC_QUOTE,  KC_GRAVE,  TO(0),
+                                   KC_LGUI,   KC_LALT, KC_QUOTE,  KC_GRAVE,  KC_TRANSPARENT,
       KC_LBRACKET,    KC_RBRACKET,
       KC_HOME,
       KC_END,         KC_ENTER,    KC_SPACE
@@ -306,54 +306,84 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-uint32_t layer_state_set_user(uint32_t state) {
-  uint8_t brightness = biton32(state) * (LED_BRIGHTNESS_HI / 7);
-  ergodox_right_led_1_off();
-
-  if (brightness) {
-    ergodox_right_led_1_set(brightness);
-    ergodox_right_led_1_on();
+void ledb(uint8_t led, bool on, uint8_t brightness) {
+  switch (led) {
+    case 1: OCR1A = brightness; break;
+    case 2: OCR1B = brightness; break;
+    case 3: OCR1C = brightness; break;
+    default: break;
   }
+
+  uint8_t led_mask = 1 << (4 + led);
+  if (on) {
+    DDRB |= led_mask;
+    PORTB |= led_mask;
+  } else {
+    DDRB &= ~led_mask;
+    PORTB &= ~led_mask;
+  }
+} 
+
+void led(uint8_t led, bool on) {
+  ledb(led, on, LED_BRIGHTNESS_HI);
+}
+
+void switch_layer_leds(uint32_t state) {
+  uint8_t layer = biton32(state);
+  led(1, false);
+  led(2, false);
+  switch (layer) {
+    case 1: 
+      ledb(1, true, 0);
+      ledb(2, true, 0);
+      break;
+    case 2: 
+      ledb(1, true, LED_BRIGHTNESS_LO);
+      break;
+    case 3: 
+      led(1, true);
+      break;
+    case 4: 
+      ledb(2, true, LED_BRIGHTNESS_LO);
+      break;
+    case 5: 
+      led(2, true);
+      break;
+    case 6: 
+      ledb(1, true, LED_BRIGHTNESS_LO);
+      ledb(2, true, LED_BRIGHTNESS_LO);
+      break;
+    case 7: 
+      led(1, true);
+      led(2, true);
+      break;
+    default: 
+      break;
+  }
+};
+
+uint32_t layer_state_set_user(uint32_t state) {
+  switch_layer_leds(state);
 
   return state;
 };
 
-uint8_t calc_mods_brightness(uint8_t mods) {
-  uint8_t brightness = 0;
-  uint8_t step = LED_BRIGHTNESS_HI / 4;
+uint8_t count_bits(uint8_t n) {
+  unsigned int count = 0; 
+  while (n) { 
+    count += n & 1; 
+    n >>= 1; 
+  } 
+  return count; 
+}
 
-  if (mods & MOD_MASK_SHIFT) {
-    brightness += step;
-  }
-  if (mods & MOD_MASK_CTRL) {
-    brightness += step;
-  }
-  if (mods & MOD_MASK_ALT) {
-    brightness += step;
-  }
-  if (mods & MOD_MASK_GUI) {
-    brightness += step;
-  }
+void switch_mod_led(uint8_t mods) {
+  uint8_t step = LED_BRIGHTNESS_HI / 8;
 
-  return brightness;
+  ledb(3, !!mods, count_bits(mods) * step);
 };
 
-void oneshot_mods_changed_user(uint8_t mods) {
-  ergodox_right_led_2_set(calc_mods_brightness(mods));
-  
-  if (mods) {
-    ergodox_right_led_2_on();
-  } else {
-    ergodox_right_led_2_off();
-  }
-};
-
-void oneshot_locked_mods_changed_user(uint8_t mods) {
-  ergodox_right_led_3_set(calc_mods_brightness(mods));
-  
-  if (mods) {
-    ergodox_right_led_3_on();
-  } else {
-    ergodox_right_led_3_off();
-  }
+// Runs constantly in the background, in a loop.
+void matrix_scan_user(void) {
+  switch_mod_led(keyboard_report->mods | get_oneshot_mods());
 };
