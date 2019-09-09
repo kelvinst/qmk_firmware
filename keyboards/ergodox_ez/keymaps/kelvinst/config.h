@@ -13,19 +13,28 @@
 #undef RGBLIGHT_BRI_STEP
 #define RGBLIGHT_BRI_STEP 6
 
-#undef MOUSEKEY_MAX_SPEED
-#define MOUSEKEY_MAX_SPEED 2
-
-#undef MOUSEKEY_TIME_TO_MAX
-#define MOUSEKEY_TIME_TO_MAX 20
-
-#undef MOUSEKEY_WHEEL_MAX_SPEED
-#define MOUSEKEY_WHEEL_MAX_SPEED 2
-
-#undef MOUSEKEY_WHEEL_TIME_TO_MAX
-#define MOUSEKEY_WHEEL_TIME_TO_MAX 80
-
 #define ORYX_CONFIGURATOR
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                  Mouse                                      *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+#define MK_3_SPEED
+
+#define MK_C_OFFSET_0 4
+#define MK_C_INTERVAL_0 16
+#define MK_W_OFFSET_0 1	
+#define MK_W_INTERVAL_0 120
+
+#define MK_C_OFFSET_1 8	
+#define MK_C_INTERVAL_1 16
+#define MK_W_OFFSET_1 1
+#define MK_W_INTERVAL_1 60
+
+#define MK_C_OFFSET_2 16
+#define MK_C_INTERVAL_2 16	
+#define MK_W_OFFSET_2 1
+#define MK_W_INTERVAL_2 20
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  *                                 Effects                                     *
