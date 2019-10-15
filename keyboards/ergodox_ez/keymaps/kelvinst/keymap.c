@@ -1,204 +1,122 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 
-#define KC_MAC_UNDO LGUI(KC_Z)
-#define KC_MAC_CUT LGUI(KC_X)
-#define KC_MAC_COPY LGUI(KC_C)
-#define KC_MAC_PASTE LGUI(KC_V)
-#define KC_PC_UNDO LCTL(KC_Z)
-#define KC_PC_CUT LCTL(KC_X)
-#define KC_PC_COPY LCTL(KC_C)
-#define KC_PC_PASTE LCTL(KC_V)
-#define NO_TH ALGR(KC_T)
-#define NO_ETH ALGR(KC_D)
-
 enum custom_keycodes {
   RGB_SLD = EZ_SAFE_RANGE,
   EPRM,
-  HSV_200_255_255,
-  HSV_0_255_255,
-  HSV_86_255_255,
-  HSV_172_255_255,
   DYNAMIC_MACRO_RANGE,
 };
 #include "dynamic_macro.h"
 
+#define OSM_CTL OSM(MOD_LCTL)
+#define OSM_SFT OSM(MOD_LSFT)
+#define OSM_GUI OSM(MOD_LGUI)
+#define OSM_ALT OSM(MOD_LALT)
+#define LAY_CLR TOGGLE_LAYER_COLOR
+#define KK_A SFT_T(KC_A)
+#define KK_S CTL_T(KC_S)
+#define KK_D ALT_T(KC_D)
+#define KK_F GUI_T(KC_F)    
+#define KK_J GUI_T(KC_J)
+#define KK_K ALT_T(KC_K)
+#define KK_L CTL_T(KC_L)
+#define KK_SCLN SFT_T(KC_SCLN)
+#define MC_REC1 DYN_REC_START1
+#define MC_PLY1 DYN_MACRO_PLAY1
+#define MC_REC2 DYN_REC_START2
+#define MC_PLY2 DYN_MACRO_PLAY2
+#define MC_STOP DYN_REC_STOP
+#define KG_BSPC LGUI(KC_BSPC)
+#define KC_PI LALT(KC_P)
+
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [0] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      KC_ESCAPE,       KC_1,            KC_2,            KC_3,            KC_4,             KC_5,          TO(6),
-      LGUI_T(KC_TAB),  KC_Q,            KC_W,            KC_E,            KC_R,             KC_T,          OSL(2), 
-      OSM(MOD_LCTL),   KC_A,            KC_S,            KC_D,            KC_F,             KC_G,
-      OSM(MOD_LSFT),   KC_Z,            KC_X,            KC_C,            KC_V,             KC_B,          OSL(4),
-      OSL(1),          KC_GRAVE,        KC_QUOTE,        KC_LEFT,         KC_RIGHT,
-                                                                                            KC_SPACE,      KC_BSPACE,
-                                                                                                           OSM(MOD_LSFT),
-                                                                          OSM(MOD_LGUI),    OSM(MOD_LALT), OSM(MOD_LCTL),
+  [0] = LAYOUT_ergodox_pretty(
+      KC_ESC  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    , OSL(2)  ,                               OSL(2)   , KC_6    , KC_7    , KC_8    , KC_9    , KC_0    , KC_MINS ,
+      KC_TAB  , KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    , OSL(4)  ,                               OSL(4)  , KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_EQL  , 
+      OSM_CTL , KK_A    , KK_S    , KK_D    , KK_F    , KC_G    ,                                                   KC_H    , KK_J    , KK_K    , KK_L    , KK_SCLN , KC_ENT  , 
+      OSM_SFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , OSL(6)  ,                               OSL(6)  , KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH , KC_BSLS ,
+      KC_LEAD , KC_GRV  , KC_QUOT , KC_LEFT , KC_RGHT ,                                                                       KC_DOWN , KC_UP   , KC_LBRC , KC_RBRC , KC_LEAD , 
+                                                                  KC_INS  , KC_HOME ,           KC_PGUP , KC_DEL  , 
+                                                                            KC_END  ,           KC_PGDN , 
+                                                        OSM_GUI , OSM_ALT , OSL(1)  ,           OSL(1)  , KC_BSPC , KC_SPC
+    ) , 
 
-      /* * * * * * * * * * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      TO(2),           KC_6,            KC_7,            KC_8,            KC_9,             KC_0,          KC_MINUS,
-      OSL(2),          KC_Y,            KC_U,            KC_I,            KC_O,             KC_P,          KC_EQUAL,
-                       KC_H,            KC_J,            KC_K,            KC_L,             KC_SCOLON,     LCTL_T(KC_ENTER),
-      OSL(4),          KC_N,            KC_M,            KC_COMMA,        KC_DOT,           KC_SLASH,      KC_BSLASH,
-                                        KC_DOWN,         KC_UP,           KC_LBRACKET,      KC_RBRACKET,   OSL(1),
-      OSM(MOD_RALT),   OSM(MOD_RGUI),
-      OSM(MOD_RSFT), 
-      OSM(MOD_RCTL),   KC_BSPACE,       KC_SPACE
-    ), 
-
-  [1] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      KC_MINUS,         KC_0,            KC_9,            KC_8,             KC_7,            KC_6,      TO(0),
-      KC_EQUAL,         KC_P,            KC_O,            KC_I,             KC_U,            KC_Y,      KC_NO,
-      LCTL_T(KC_ENTER), KC_SCOLON,       KC_L,            KC_K,             KC_J,            KC_H,
-      KC_BSLASH,        KC_SLASH,        KC_DOT,          KC_COMMA,         KC_M,            KC_N,      KC_NO,
-      KC_TRANSPARENT,   KC_LBRACKET,     KC_RBRACKET,     KC_UP,            KC_DOWN,
-                                                                                             KC_DELETE, KC_INSERT,
-                                                                                                        KC_PGUP,
-                                                                            KC_SPACE,        KC_BSPACE, KC_PGDOWN,
-
-      /* * * * * * * * * * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      TO(0),            KC_5,            KC_4,            KC_3,             KC_2,            KC_1,      KC_ESCAPE,
-      KC_NO,            KC_T,            KC_R,            KC_E,             KC_W,            KC_Q,      LGUI_T(KC_TAB),
-                        KC_G,            KC_F,            KC_D,             KC_S,            KC_A,      OSM(MOD_LCTL),
-      KC_NO,            KC_B,            KC_V,            KC_C,             KC_X,            KC_Z,      OSM(MOD_LSFT),
-                                         KC_LEFT,         KC_RIGHT,         KC_QUOTE,        KC_GRAVE,  KC_TRANSPARENT,
-      KC_ASOFF,         KC_ASON,
-      KC_HOME,
-      KC_END,           OSM(MOD_LALT),   OSM(MOD_LGUI)
-    ), 
+  [1] = LAYOUT_ergodox_pretty(
+      KC_MINS , KC_0    , KC_9    , KC_8    , KC_7    , KC_6    , XXXXXXX ,                               XXXXXXX , KC_5    , KC_4    , KC_3    , KC_2    , KC_1    , KC_ESC  ,
+      KC_EQL  , KC_P    , KC_O    , KC_I    , KC_U    , KC_Y    , XXXXXXX ,                               XXXXXXX , KC_T    , KC_R    , KC_E    , KC_W    , KC_Q    , KC_TAB  ,
+      KC_ENT  , KK_SCLN , KK_L    , KK_K    , KK_J    , KC_H    ,                                                   KC_G    , KK_F    , KK_D    , KK_S    , KK_A    , OSM_CTL ,
+      KC_BSLS , KC_SLSH , KC_DOT  , KC_COMM , KC_M    , KC_N    , XXXXXXX ,                               XXXXXXX , KC_B    , KC_V    , KC_C    , KC_X    , KC_Z    , OSM_SFT ,
+      KC_LEAD , KC_LBRC , KC_RBRC , KC_UP   , KC_DOWN,                                                                        KC_LEFT , KC_RGHT , KC_QUOT , KC_GRV  , KC_LEAD ,
+                                                                  KC_DEL  , KC_PGUP ,           KC_HOME , KC_INS  , 
+                                                                            KC_PGDN ,           KC_END  ,
+                                                        KC_SPC  , KC_BSPC , _______ ,           _______ , OSM_ALT , OSM_GUI
+    ) , 
 
   [2] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      KC_TRANSPARENT,  KC_F1,              KC_F2,               KC_F3,               KC_F4,               KC_F5,           TO(0),
-      KC_TRANSPARENT,  KC_F6,              KC_F7,               KC_F8,               KC_F9,               KC_F10,          KC_TRANSPARENT,
-      KC_TRANSPARENT,  KC_F11,             KC_F12,              KC_F13,              KC_F14,              KC_F15,
-      KC_TRANSPARENT,  KC_F16,             KC_F17,              KC_F18,              KC_F19,              KC_F20,          KC_NO,
-      OSL(3),          KC_F21,             KC_F22,              KC_F23,              KC_F24,
-                                                                                                          HSV_200_255_255, HSV_0_255_255,
-                                                                                                          RGB_HUI,
-                                                                                     RGB_MOD,             RGB_SLD,         RGB_HUD,
-
-      /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      TO(4),           KC_AUDIO_VOL_DOWN,  KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, KC_AUDIO_VOL_UP, KC_AUDIO_MUTE,
-      KC_TRANSPARENT,  KC_MS_ACCEL0,       KC_MS_BTN1,          KC_MS_UP,            KC_MS_BTN2,          DYN_REC_START1,  DYN_MACRO_PLAY1,
-                       KC_MS_ACCEL1,       KC_MS_LEFT,          KC_MS_DOWN,          KC_MS_RIGHT,         DYN_REC_START2,  DYN_MACRO_PLAY2,
-      KC_NO,           KC_MS_ACCEL2,       KC_MS_BTN3,          KC_MS_WH_UP,         KC_MS_BTN4,          KC_MS_BTN5,      DYN_REC_STOP,
-                                           KC_MS_WH_LEFT,       KC_MS_WH_DOWN,       KC_MS_WH_RIGHT,      RESET,           OSL(3),
-      HSV_86_255_255,  HSV_172_255_255,
-      RGB_VAI,
-      RGB_VAD,         TOGGLE_LAYER_COLOR, RGB_TOG
-    ), 
+      KC_ESC  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    , _______ ,                               _______ , KC_6    , KC_7    , KC_8    , KC_9    , KC_0    , KC_MINS ,
+      KC_TAB  , KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    , XXXXXXX ,                               XXXXXXX , KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_EQL  ,
+      KC_LCTL , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                   KC_H    , KC_J    , KC_K    , KC_L    , KC_SCLN , KC_BSLS ,
+      KC_LSFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX ,                               XXXXXXX , KC_N    , KC_M    , KC_UP   , KC_COMM , KC_DOT  , KC_SLSH ,
+      KC_LBRC , KC_GRV  , KC_QUOT , KC_LALT , KC_LGUI ,                                                                       KC_LEFT , KC_DOWN , KC_RGHT , KC_RCTL , KC_RBRC ,
+                                                                  KC_INS  , KC_HOME ,           KC_PGUP , KC_DEL  ,
+                                                                            KC_END  ,           KC_PGDN ,
+                                                        KC_SPC  , KC_ENT  , OSL(3)  ,           OSL(3)  , KC_BSPC , KC_SPC
+    ) , 
 
   [3] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      KC_AUDIO_MUTE,   KC_AUDIO_VOL_DOWN,  KC_MEDIA_PREV_TRACK, KC_MEDIA_PLAY_PAUSE, KC_MEDIA_NEXT_TRACK, KC_AUDIO_VOL_UP,    TO(2),
-      DYN_MACRO_PLAY1, DYN_REC_START1,     KC_MS_BTN1,          KC_MS_UP,            KC_MS_BTN2,          KC_MS_ACCEL0,       KC_NO,
-      DYN_MACRO_PLAY2, DYN_REC_START2,     KC_MS_LEFT,          KC_MS_DOWN,          KC_MS_RIGHT,         KC_MS_ACCEL1,
-      DYN_REC_STOP,    KC_MS_BTN5,         KC_MS_BTN4,          KC_MS_WH_UP,         KC_MS_BTN3,          KC_MS_ACCEL2,       KC_NO,
-      KC_TRANSPARENT,  RESET,              KC_MS_WH_LEFT,       KC_MS_WH_DOWN,       KC_MS_WH_RIGHT,
-                                                                                                          HSV_172_255_255,    HSV_86_255_255,
-                                                                                                                              RGB_VAI,
-                                                                                     RGB_TOG,             TOGGLE_LAYER_COLOR, RGB_VAD,
+      KC_MINS , KC_0    , KC_9    , KC_8    , KC_7    , KC_6    , XXXXXXX ,                               XXXXXXX , KC_5    , KC_4    , KC_3    , KC_2    , KC_1    , KC_ESC  ,
+      KC_EQL  , KC_P    , KC_O    , KC_I    , KC_U    , KC_Y    , XXXXXXX ,                               XXXXXXX , KC_T    , KC_R    , KC_E    , KC_W    , KC_Q    , KC_TAB  ,
+      KC_BSLS , KC_SCLN , KC_L    , KC_K    , KC_J    , KC_H    ,                                                   KC_G    , KC_F    , KC_A    , KC_S    , KC_D    , KC_LCTL ,
+      KC_SLSH , KC_DOT  , KC_COMM , KC_UP   , KC_M    , KC_N    , XXXXXXX ,                               XXXXXXX , KC_B    , KC_V    , KC_C    , KC_X    , KC_Z    , KC_RSFT ,
+      KC_RBRC , KC_RCTL , KC_LEFT , KC_DOWN , KC_RGHT ,                                                                       KC_LGUI , KC_LALT , KC_QUOT , KC_GRV  , KC_LBRC ,
+                                                                  KC_DEL  , KC_PGUP ,           KC_HOME , KC_INS  ,
+                                                                            KC_PGDN ,           KC_END  ,
+                                                        KC_SPC  , KC_BSPC , _______ ,           _______ , KC_ENT , KC_SPC
+    ) , 
 
-      /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-      TO(2),           KC_F1,              KC_F2,               KC_F3,               KC_F2,               KC_F5,              KC_ESCAPE,
-      KC_NO,           KC_F6,              KC_F7,               KC_F8,               KC_F9,               KC_F10,             LGUI_T(KC_TAB),
-                       KC_F11,             KC_F12,              KC_F13,              KC_F14,              KC_F15,             OSM(MOD_LCTL),
-      KC_NO,           KC_F16,             KC_F17,              KC_F18,              KC_F19,              KC_F20,             OSM(MOD_LSFT),
-                                           KC_F21,              KC_F22,              KC_F23,              KC_F24,             KC_TRANSPARENT,
-      HSV_0_255_255,   HSV_200_255_255,
-      RGB_VAI,
-      RGB_HUD,         RGB_SLD,            RGB_MOD
-    ), 
+  [4] = LAYOUT_ergodox_pretty(
+      _______ , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , XXXXXXX ,                               XXXXXXX , KC_VOLD , KC_MPRV , KC_MPLY , KC_MNXT , KC_VOLU , KC_MUTE ,
+      _______ , KC_F6   , KC_F7   , KC_F8   , KC_F9   , KC_F10  , _______ ,                               _______ , KC_ACL0 , KC_BTN1 , KC_MS_U , KC_BTN2 , MC_REC1 , MC_PLY1 ,
+      _______ , KC_F11  , KC_F12  , KC_F13  , KC_F14  , KC_F15  ,                                                   KC_ACL1 , KC_MS_L , KC_MS_D , KC_MS_R , MC_REC2 , MC_PLY2 ,
+      _______ , KC_F16  , KC_F17  , KC_F18  , KC_F19  , KC_F20  , XXXXXXX ,                               XXXXXXX , KC_ACL2 , KC_BTN3 , KC_WH_U , KC_BTN4 , KC_BTN5 , MC_STOP ,
+      _______ , KC_F21  , KC_F22  , KC_F23  , KC_F24  ,                                                                       KC_WH_L , KC_WH_D , KC_WH_R , RESET   , _______ ,
+                                                                  XXXXXXX , XXXXXXX ,           KC_BTN5 , KC_BTN4 ,
+                                                                            KC_ACL0 ,           KC_BTN3 ,
+                                                        KC_ACL2 , KC_ACL1 , OSL(5)  ,           OSL(5)  , KC_BTN2 , KC_BTN1
+    ) , 
 
-  [4] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * * * * * * */
-      KC_TRANSPARENT, KC_AMPR,         KC_PIPE,    KC_EXLM,     KC_EQUAL,      KC_NO,          TO(2),
-      KC_TRANSPARENT, KC_HASH,         KC_PERC,    KC_LCBR,     KC_RCBR,       KC_NO,          KC_NO,
-      KC_TRANSPARENT, KC_DLR,          KC_AT,      KC_LPRN,     KC_RPRN,       KC_NO,
-      KC_TRANSPARENT, KC_TILD,         KC_CIRC,    KC_LBRACKET, KC_RBRACKET,   KC_NO,          KC_TRANSPARENT,
-      OSL(5),         KC_LABK,         KC_PIPE,    KC_MINUS,    KC_RABK,
-                                                                               LCTL(KC_LEFT),  LCTL(KC_RIGHT),
-                                                                                               KC_F9,
-                                                                KC_F11,        KC_F12,         KC_F13,
+  [5] = LAYOUT_ergodox_pretty(
+      KC_MUTE , KC_VOLD , KC_MPRV , KC_MPLY , KC_MNXT , KC_VOLU , XXXXXXX ,                               XXXXXXX , KC_F1   , KC_F2   , KC_F3   , KC_F2   , KC_F5   , _______ , 
+      MC_PLY1 , MC_REC1 , KC_BTN1 , KC_MS_U , KC_BTN2 , KC_ACL0 , _______ ,                               _______ , KC_F6   , KC_F7   , KC_F8   , KC_F9   , KC_F10  , _______ , 
+      MC_PLY2 , MC_REC2 , KC_MS_L , KC_MS_D , KC_MS_R , KC_ACL1 ,                                                   KC_F11  , KC_F12  , KC_F13  , KC_F14  , KC_F15  , _______ , 
+      MC_STOP , KC_BTN5 , KC_BTN4 , KC_WH_U , KC_BTN3 , KC_ACL2 , XXXXXXX ,                               XXXXXXX , KC_F16  , KC_F17  , KC_F18  , KC_F19  , KC_F20  , _______ , 
+      _______ , RESET   , KC_WH_L , KC_WH_D , KC_WH_R,                                                                        KC_F21  , KC_F22  , KC_F23  , KC_F24  , _______ , 
+                                                                  KC_BTN4 , KC_BTN5 ,           XXXXXXX , XXXXXXX , 
+                                                                            KC_BTN3 ,           KC_ACL0 , 
+                                                        KC_BTN1 , KC_BTN2 , _______ ,           _______ , KC_ACL1 , KC_ACL2
+    ) , 
 
-      /* * * * * * * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * * * * * * */
-      TO(6),          KC_C,            KC_7,       KC_8,        KC_9,          KC_SLASH,       KC_EXLM,
-      KC_NO,          LGUI(KC_BSPACE), KC_4,       KC_5,        KC_6,          KC_KP_ASTERISK, KC_CIRC,
-                      KC_BSPACE,       KC_1,       KC_2,        KC_3,          KC_KP_MINUS,    LCTL_T(KC_ENTER),
-      KC_TRANSPARENT, KC_DELETE,       KC_KP_0,    KC_KP_DOT,   KC_EQUAL,      KC_KP_PLUS,     OSM(MOD_LSFT),
-                                       LALT(KC_P), KC_COMMA,    KC_LPRN,       KC_RPRN,        OSL(5),
-      LCTL(KC_DOWN),  LCTL(KC_UP),
-      KC_ASUP,
-      KC_ASDN,        KC_ASRP,         KC_ASTG
+  [6] = LAYOUT_ergodox_pretty(
+      _______ , KC_AMPR , KC_PIPE , KC_EXLM , KC_EQL  , XXXXXXX , XXXXXXX ,                               XXXXXXX , KC_C    , KC_P7   , KC_P8   , KC_P9   , KC_PSLS , KC_EXLM ,
+      _______ , KC_HASH , KC_PERC , KC_LCBR , KC_RCBR , XXXXXXX , XXXXXXX ,                               XXXXXXX , KG_BSPC , KC_P4   , KC_P5   , KC_P6   , KC_PAST , KC_CIRC ,
+      _______ , KC_DLR  , KC_AT   , KC_LPRN , KC_RPRN , XXXXXXX ,                                                   KC_BSPC , KC_P1   , KC_P2   , KC_P3   , KC_PMNS , KC_ENT  ,
+      _______ , KC_TILD , KC_CIRC , KC_LBRC , KC_RBRC , XXXXXXX , _______ ,                               _______ , KC_DEL  , KC_PDOT , KC_P0   , KC_EQL  , KC_PPLS , OSM_SFT ,
+      _______ , KC_LABK , KC_PIPE , KC_MINS , KC_RABK ,                                                                       KC_COMM , KC_PI   , KC_LPRN , KC_RPRN , _______ ,
+                                                                  XXXXXXX , RGB_HUI ,           RGB_VAI , XXXXXXX ,
+                                                                            RGB_HUD ,           RGB_VAD ,
+                                                        RGB_MOD , RGB_SLD , OSL(7)  ,           OSL(7)  , LAY_CLR , RGB_TOG
     ),
 
-  [5] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * * * * * */
-      KC_EXLM,          KC_SLASH,       KC_7,     KC_8,       KC_9,        KC_C,            TO(4),
-      KC_CIRC,          KC_KP_ASTERISK, KC_4,     KC_5,       KC_6,        LGUI(KC_BSPACE), KC_NO,
-      LCTL_T(KC_ENTER), KC_MINUS,       KC_1,     KC_2,       KC_3,        KC_BSPACE,
-      OSM(MOD_LSFT),    KC_KP_PLUS,     KC_EQUAL, KC_0,       KC_DOT,      KC_DELETE,       KC_NO,
-      KC_TRANSPARENT,   KC_LPRN,        KC_RPRN,  LALT(KC_P), KC_COMMA,
-                                                                           LCTL(KC_UP),     LCTL(KC_DOWN),
-                                                                                            KC_ASUP,
-                                                              KC_ASTG,     KC_ASRP,         KC_ASDN,
-
-      /* * * * * * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * * * * * */
-      TO(4),            KC_NO,          KC_AMPR,  KC_PIPE,    KC_EXLM,     KC_EQUAL,        KC_ESCAPE,
-      KC_NO,            KC_NO,          KC_HASH,  KC_PERC,    KC_LCBR,     KC_RCBR,         LGUI_T(KC_TAB),
-                        KC_NO,          KC_DLR,   KC_AT,      KC_LPRN,     KC_RPRN,         OSM(MOD_LCTL),
-      KC_NO,            KC_NO,          KC_TILD,  KC_CIRC,    KC_LBRACKET, KC_RBRACKET,     OSM(MOD_LSFT),
-                                        KC_LABK,  KC_PIPE,    KC_KP_MINUS, KC_RABK,         KC_TRANSPARENT,
-      LCTL(KC_LEFT),    LCTL(KC_RIGHT),
-      KC_F9,
-      KC_F13,           KC_F12,         KC_F11
-    ), 
-
-  [6] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * */
-      KC_ESCAPE,   KC_1,        KC_2,     KC_3,    KC_4,        KC_5,        TO(4),
-      KC_TAB,      KC_Q,        KC_W,     KC_E,    KC_R,        KC_T,        KC_NO,
-      KC_LCTRL,    KC_A,        KC_S,     KC_D,    KC_F,        KC_G,
-      KC_LSHIFT,   KC_Z,        KC_X,     KC_C,    KC_V,        KC_B,        KC_NO,
-      OSL(7),      KC_GRAVE,    KC_QUOTE, KC_LALT, KC_LGUI,
-                                                                KC_LBRACKET, KC_RBRACKET,
-                                                                             KC_HOME,
-                                                   KC_SPACE,    KC_ENTER,    KC_END,
-
-      /* * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * */
-      TO(0),       KC_6,        KC_7,     KC_8,    KC_9,        KC_0,        KC_MINUS,
-      KC_NO,       KC_Y,        KC_U,     KC_I,    KC_O,        KC_P,        KC_EQUAL,
-                   KC_H,        KC_J,     KC_K,    KC_L,        KC_SCOLON,   KC_BSLASH,
-      KC_NO,       KC_N,        KC_M,     KC_UP,   KC_COMMA,    KC_DOT,      KC_SLASH,
-                                KC_LEFT,  KC_DOWN, KC_RIGHT,    KC_RCTRL,    OSL(7),
-      KC_INSERT,   KC_DELETE,
-      KC_PGUP,
-      KC_PGDOWN,   KC_BSPACE,   KC_SPACE
-    ), 
-
-  [7] = LAYOUT_ergodox(
-      /* * * * * * * * * * * * * * * * * Left hand * * * * * * * * * * * * * * * * * * * * */
-      KC_MINUS,       KC_0,        KC_9,      KC_8,    KC_7,      KC_6,      TO(6),
-      KC_EQUAL,       KC_P,        KC_O,      KC_I,    KC_U,      KC_Y,      KC_NO,
-      KC_BSLASH,      KC_SCOLON,   KC_L,      KC_K,    KC_J,      KC_H,
-      KC_SLASH,       KC_DOT,      KC_COMMA,  KC_UP,   KC_M,      KC_N,      KC_NO,
-      KC_TRANSPARENT, KC_RCTRL,    KC_LEFT,   KC_DOWN, KC_RIGHT,
-                                                                  KC_DELETE, KC_INSERT,
-                                                                             KC_PGUP,
-                                                       KC_SPACE,  KC_BSPACE, KC_PGDOWN,
-
-      /* * * * * * * * * * * * * * * * * Right hand * * * * * * * * * * * * * * * * * * * * */
-      TO(6),          KC_5,        KC_4,      KC_3,    KC_2,      KC_1,      KC_ESCAPE,
-      KC_NO,          KC_T,        KC_R,      KC_E,    KC_W,      KC_Q,      KC_TAB,
-                      KC_G,        KC_F,      KC_A,    KC_S,      KC_D,      KC_LCTRL,
-      KC_NO,          KC_B,        KC_V,      KC_C,    KC_X,      KC_Z,      KC_RSHIFT,
-                                   KC_LGUI,   KC_LALT, KC_QUOTE,  KC_GRAVE,  KC_TRANSPARENT,
-      KC_LBRACKET,    KC_RBRACKET,
-      KC_HOME,
-      KC_END,         KC_ENTER,    KC_SPACE
-    ), 
+  [7] = LAYOUT_ergodox_pretty(
+      KC_EXLM , KC_PSLS , KC_P7   , KC_P8   , KC_P9   , KC_C    , XXXXXXX ,                               XXXXXXX , XXXXXXX , KC_AMPR , KC_PIPE , KC_EXLM , KC_EQL  , _______ ,
+      KC_CIRC , KC_PAST , KC_P4   , KC_P5   , KC_P6   , KG_BSPC , XXXXXXX ,                               XXXXXXX , XXXXXXX , KC_HASH , KC_PERC , KC_LCBR , KC_RCBR , _______ ,
+      KC_ENT  , KC_PMNS , KC_P1   , KC_P2   , KC_P3   , KC_BSPC ,                                                   XXXXXXX , KC_DLR  , KC_AT   , KC_LPRN , KC_RPRN , _______ ,
+      OSM_SFT , KC_PPLS , KC_EQL  , KC_P0   , KC_PDOT , KC_DEL  , XXXXXXX ,                               XXXXXXX , XXXXXXX , KC_TILD , KC_CIRC , KC_LBRC , KC_RBRC , _______ ,
+      _______ , KC_LPRN , KC_RPRN , KC_PI   , KC_COMM ,                                                                       KC_LABK , KC_PIPE , KC_PMNS , KC_RABK , _______ ,
+                                                                  XXXXXXX , RGB_VAI ,           RGB_HUI , XXXXXXX ,
+                                                                            RGB_VAD ,           RGB_HUD ,
+                                                        RGB_TOG , LAY_CLR , _______ ,           _______ , RGB_SLD , RGB_MOD
+    ) , 
 
 };
 
@@ -381,30 +299,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         rgblight_mode(1);
       }
       return false;
-    case HSV_200_255_255:
-      if (record->event.pressed) {
-        rgblight_mode(1);
-        rgblight_sethsv(200,255,255);
-      }
-      return false;
-    case HSV_0_255_255:
-      if (record->event.pressed) {
-        rgblight_mode(1);
-        rgblight_sethsv(0,255,255);
-      }
-      return false;
-    case HSV_86_255_255:
-      if (record->event.pressed) {
-        rgblight_mode(1);
-        rgblight_sethsv(86,255,255);
-      }
-      return false;
-    case HSV_172_255_255:
-      if (record->event.pressed) {
-        rgblight_mode(1);
-        rgblight_sethsv(172,255,255);
-      }
-      return false;
   }
   return true;
 }
@@ -442,22 +336,22 @@ void switch_layer_leds(uint32_t state) {
       break;
     case 2: 
       ledb(1, true, LED_BRIGHTNESS_LO);
+      ledb(2, true, LED_BRIGHTNESS_LO);
       break;
     case 3: 
       led(1, true);
-      break;
-    case 4: 
-      ledb(2, true, LED_BRIGHTNESS_LO);
-      break;
-    case 5: 
       led(2, true);
       break;
-    case 6: 
+    case 4: 
       ledb(1, true, LED_BRIGHTNESS_LO);
+      break;
+    case 5: 
+      led(1, true);
+      break;
+    case 6: 
       ledb(2, true, LED_BRIGHTNESS_LO);
       break;
     case 7: 
-      led(1, true);
       led(2, true);
       break;
     default: 
@@ -483,10 +377,22 @@ uint8_t count_bits(uint8_t n) {
 void switch_mod_led(uint8_t mods) {
   uint8_t step = LED_BRIGHTNESS_HI / 8;
 
-  ledb(3, !!mods, count_bits(mods) * step);
+  ledb(3, !!mods, count_bits(mods) * step * 2);
 };
+
+LEADER_EXTERNS();
 
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
   switch_mod_led(keyboard_report->mods | get_oneshot_mods());
+
+  LEADER_DICTIONARY() {
+    leading = false;
+
+    SEQ_ONE_KEY(KC_F) {
+      SEND_STRING("QMK is awesome.");
+    }
+    
+    leader_end();
+  }
 };
