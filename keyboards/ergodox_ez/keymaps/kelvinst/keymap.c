@@ -42,10 +42,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ) , 
 
   [1] = LAYOUT_ergodox_pretty(
-      KC_MINS , KC_0    , KC_9    , KC_8    , KC_7    , KC_6    , XXXXXXX ,                               XXXXXXX , KC_5    , KC_4    , KC_3    , KC_2    , KC_1    , KC_ESC  ,
-      KC_EQL  , KC_P    , KC_O    , KC_I    , KC_U    , KC_Y    , XXXXXXX ,                               XXXXXXX , KC_T    , KC_R    , KC_E    , KC_W    , KC_Q    , KC_TAB  ,
+      KC_MINS , KC_0    , KC_9    , KC_8    , KC_7    , KC_6    , _______ ,                               _______ , KC_5    , KC_4    , KC_3    , KC_2    , KC_1    , KC_ESC  ,
+      KC_EQL  , KC_P    , KC_O    , KC_I    , KC_U    , KC_Y    , _______ ,                               _______ , KC_T    , KC_R    , KC_E    , KC_W    , KC_Q    , KC_TAB  ,
       KC_ENT  , KK_SCLN , KK_L    , KK_K    , KK_J    , KC_H    ,                                                   KC_G    , KK_F    , KK_D    , KK_S    , KK_A    , OSM_CTL ,
-      KC_BSLS , KC_SLSH , KC_DOT  , KC_COMM , KC_M    , KC_N    , XXXXXXX ,                               XXXXXXX , KC_B    , KC_V    , KC_C    , KC_X    , KC_Z    , OSM_SFT ,
+      KC_BSLS , KC_SLSH , KC_DOT  , KC_COMM , KC_M    , KC_N    , _______ ,                               _______ , KC_B    , KC_V    , KC_C    , KC_X    , KC_Z    , OSM_SFT ,
       KC_LEAD , KC_LBRC , KC_RBRC , KC_UP   , KC_DOWN,                                                                        KC_LEFT , KC_RGHT , KC_QUOT , KC_GRV  , KC_LEAD ,
                                                                   KC_DEL  , KC_PGUP ,           KC_HOME , KC_INS  , 
                                                                             KC_PGDN ,           KC_END  ,
@@ -54,9 +54,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [2] = LAYOUT_ergodox(
       KC_ESC  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5    , _______ ,                               _______ , KC_6    , KC_7    , KC_8    , KC_9    , KC_0    , KC_MINS ,
-      KC_TAB  , KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    , XXXXXXX ,                               XXXXXXX , KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_EQL  ,
+      KC_TAB  , KC_Q    , KC_W    , KC_E    , KC_R    , KC_T    , _______ ,                               _______ , KC_Y    , KC_U    , KC_I    , KC_O    , KC_P    , KC_EQL  ,
       KC_LCTL , KC_A    , KC_S    , KC_D    , KC_F    , KC_G    ,                                                   KC_H    , KC_J    , KC_K    , KC_L    , KC_SCLN , KC_BSLS ,
-      KC_LSFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , XXXXXXX ,                               XXXXXXX , KC_N    , KC_M    , KC_UP   , KC_COMM , KC_DOT  , KC_SLSH ,
+      KC_LSFT , KC_Z    , KC_X    , KC_C    , KC_V    , KC_B    , _______ ,                               _______ , KC_N    , KC_M    , KC_UP   , KC_COMM , KC_DOT  , KC_SLSH ,
       KC_LBRC , KC_GRV  , KC_QUOT , KC_LALT , KC_LGUI ,                                                                       KC_LEFT , KC_DOWN , KC_RGHT , KC_RCTL , KC_RBRC ,
                                                                   KC_INS  , KC_HOME ,           KC_PGUP , KC_DEL  ,
                                                                             KC_END  ,           KC_PGDN ,
@@ -64,10 +64,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ) , 
 
   [3] = LAYOUT_ergodox(
-      KC_MINS , KC_0    , KC_9    , KC_8    , KC_7    , KC_6    , XXXXXXX ,                               XXXXXXX , KC_5    , KC_4    , KC_3    , KC_2    , KC_1    , KC_ESC  ,
-      KC_EQL  , KC_P    , KC_O    , KC_I    , KC_U    , KC_Y    , XXXXXXX ,                               XXXXXXX , KC_T    , KC_R    , KC_E    , KC_W    , KC_Q    , KC_TAB  ,
+      KC_MINS , KC_0    , KC_9    , KC_8    , KC_7    , KC_6    , _______ ,                               _______ , KC_5    , KC_4    , KC_3    , KC_2    , KC_1    , KC_ESC  ,
+      KC_EQL  , KC_P    , KC_O    , KC_I    , KC_U    , KC_Y    , _______ ,                               _______ , KC_T    , KC_R    , KC_E    , KC_W    , KC_Q    , KC_TAB  ,
       KC_BSLS , KC_SCLN , KC_L    , KC_K    , KC_J    , KC_H    ,                                                   KC_G    , KC_F    , KC_A    , KC_S    , KC_D    , KC_LCTL ,
-      KC_SLSH , KC_DOT  , KC_COMM , KC_UP   , KC_M    , KC_N    , XXXXXXX ,                               XXXXXXX , KC_B    , KC_V    , KC_C    , KC_X    , KC_Z    , KC_RSFT ,
+      KC_SLSH , KC_DOT  , KC_COMM , KC_UP   , KC_M    , KC_N    , _______ ,                               _______ , KC_B    , KC_V    , KC_C    , KC_X    , KC_Z    , KC_RSFT ,
       KC_RBRC , KC_RCTL , KC_LEFT , KC_DOWN , KC_RGHT ,                                                                       KC_LGUI , KC_LALT , KC_QUOT , KC_GRV  , KC_LBRC ,
                                                                   KC_DEL  , KC_PGUP ,           KC_HOME , KC_INS  ,
                                                                             KC_PGDN ,           KC_END  ,
@@ -75,45 +75,45 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ) , 
 
   [4] = LAYOUT_ergodox_pretty(
-      _______ , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , XXXXXXX ,                               XXXXXXX , KC_VOLD , KC_MPRV , KC_MPLY , KC_MNXT , KC_VOLU , KC_MUTE ,
+      _______ , KC_F1   , KC_F2   , KC_F3   , KC_F4   , KC_F5   , _______ ,                               _______ , KC_VOLD , KC_MPRV , KC_MPLY , KC_MNXT , KC_VOLU , KC_MUTE ,
       _______ , KC_F6   , KC_F7   , KC_F8   , KC_F9   , KC_F10  , _______ ,                               _______ , KC_ACL0 , KC_BTN1 , KC_MS_U , KC_BTN2 , MC_REC1 , MC_PLY1 ,
       _______ , KC_F11  , KC_F12  , KC_F13  , KC_F14  , KC_F15  ,                                                   KC_ACL1 , KC_MS_L , KC_MS_D , KC_MS_R , MC_REC2 , MC_PLY2 ,
-      _______ , KC_F16  , KC_F17  , KC_F18  , KC_F19  , KC_F20  , XXXXXXX ,                               XXXXXXX , KC_ACL2 , KC_BTN3 , KC_WH_U , KC_BTN4 , KC_BTN5 , MC_STOP ,
+      _______ , KC_F16  , KC_F17  , KC_F18  , KC_F19  , KC_F20  , _______ ,                               _______ , KC_ACL2 , KC_BTN3 , KC_WH_U , KC_BTN4 , KC_BTN5 , MC_STOP ,
       _______ , KC_F21  , KC_F22  , KC_F23  , KC_F24  ,                                                                       KC_WH_L , KC_WH_D , KC_WH_R , RESET   , _______ ,
-                                                                  XXXXXXX , XXXXXXX ,           KC_BTN5 , KC_BTN4 ,
+                                                                  _______ , _______ ,           KC_BTN5 , KC_BTN4 ,
                                                                             KC_ACL0 ,           KC_BTN3 ,
                                                         KC_ACL2 , KC_ACL1 , OSL(5)  ,           OSL(5)  , KC_BTN2 , KC_BTN1
     ) , 
 
   [5] = LAYOUT_ergodox_pretty(
-      KC_MUTE , KC_VOLD , KC_MPRV , KC_MPLY , KC_MNXT , KC_VOLU , XXXXXXX ,                               XXXXXXX , KC_F1   , KC_F2   , KC_F3   , KC_F2   , KC_F5   , _______ , 
+      KC_MUTE , KC_VOLD , KC_MPRV , KC_MPLY , KC_MNXT , KC_VOLU , _______ ,                               _______ , KC_F1   , KC_F2   , KC_F3   , KC_F2   , KC_F5   , _______ , 
       MC_PLY1 , MC_REC1 , KC_BTN1 , KC_MS_U , KC_BTN2 , KC_ACL0 , _______ ,                               _______ , KC_F6   , KC_F7   , KC_F8   , KC_F9   , KC_F10  , _______ , 
       MC_PLY2 , MC_REC2 , KC_MS_L , KC_MS_D , KC_MS_R , KC_ACL1 ,                                                   KC_F11  , KC_F12  , KC_F13  , KC_F14  , KC_F15  , _______ , 
-      MC_STOP , KC_BTN5 , KC_BTN4 , KC_WH_U , KC_BTN3 , KC_ACL2 , XXXXXXX ,                               XXXXXXX , KC_F16  , KC_F17  , KC_F18  , KC_F19  , KC_F20  , _______ , 
+      MC_STOP , KC_BTN5 , KC_BTN4 , KC_WH_U , KC_BTN3 , KC_ACL2 , _______ ,                               _______ , KC_F16  , KC_F17  , KC_F18  , KC_F19  , KC_F20  , _______ , 
       _______ , RESET   , KC_WH_L , KC_WH_D , KC_WH_R,                                                                        KC_F21  , KC_F22  , KC_F23  , KC_F24  , _______ , 
-                                                                  KC_BTN4 , KC_BTN5 ,           XXXXXXX , XXXXXXX , 
+                                                                  KC_BTN4 , KC_BTN5 ,           _______ , _______ , 
                                                                             KC_BTN3 ,           KC_ACL0 , 
                                                         KC_BTN1 , KC_BTN2 , _______ ,           _______ , KC_ACL1 , KC_ACL2
     ) , 
 
   [6] = LAYOUT_ergodox_pretty(
-      _______ , KC_AMPR , KC_PIPE , KC_EXLM , KC_EQL  , XXXXXXX , XXXXXXX ,                               XXXXXXX , KC_C    , KC_P7   , KC_P8   , KC_P9   , KC_PSLS , KC_EXLM ,
-      _______ , KC_HASH , KC_PERC , KC_LCBR , KC_RCBR , XXXXXXX , XXXXXXX ,                               XXXXXXX , KG_BSPC , KC_P4   , KC_P5   , KC_P6   , KC_PAST , KC_CIRC ,
-      _______ , KC_DLR  , KC_AT   , KC_LPRN , KC_RPRN , XXXXXXX ,                                                   KC_BSPC , KC_P1   , KC_P2   , KC_P3   , KC_PMNS , KC_ENT  ,
-      _______ , KC_TILD , KC_CIRC , KC_LBRC , KC_RBRC , XXXXXXX , _______ ,                               _______ , KC_DEL  , KC_PDOT , KC_P0   , KC_EQL  , KC_PPLS , OSM_SFT ,
+      _______ , KC_AMPR , KC_PIPE , KC_EXLM , KC_EQL  , _______ , _______ ,                               _______ , KC_C    , KC_P7   , KC_P8   , KC_P9   , KC_PSLS , KC_EXLM ,
+      _______ , KC_HASH , KC_PERC , KC_LCBR , KC_RCBR , _______ , _______ ,                               _______ , KG_BSPC , KC_P4   , KC_P5   , KC_P6   , KC_PAST , KC_CIRC ,
+      _______ , KC_DLR  , KC_AT   , KC_LPRN , KC_RPRN , _______ ,                                                   KC_BSPC , KC_P1   , KC_P2   , KC_P3   , KC_PMNS , KC_ENT  ,
+      _______ , KC_TILD , KC_CIRC , KC_LBRC , KC_RBRC , _______ , _______ ,                               _______ , KC_DEL  , KC_PDOT , KC_P0   , KC_EQL  , KC_PPLS , OSM_SFT ,
       _______ , KC_LABK , KC_PIPE , KC_MINS , KC_RABK ,                                                                       KC_COMM , KC_PI   , KC_LPRN , KC_RPRN , _______ ,
-                                                                  XXXXXXX , RGB_HUI ,           RGB_VAI , XXXXXXX ,
+                                                                  _______ , RGB_HUI ,           RGB_VAI , _______ ,
                                                                             RGB_HUD ,           RGB_VAD ,
                                                         RGB_MOD , RGB_SLD , OSL(7)  ,           OSL(7)  , LAY_CLR , RGB_TOG
     ),
 
   [7] = LAYOUT_ergodox_pretty(
-      KC_EXLM , KC_PSLS , KC_P7   , KC_P8   , KC_P9   , KC_C    , XXXXXXX ,                               XXXXXXX , XXXXXXX , KC_AMPR , KC_PIPE , KC_EXLM , KC_EQL  , _______ ,
-      KC_CIRC , KC_PAST , KC_P4   , KC_P5   , KC_P6   , KG_BSPC , XXXXXXX ,                               XXXXXXX , XXXXXXX , KC_HASH , KC_PERC , KC_LCBR , KC_RCBR , _______ ,
-      KC_ENT  , KC_PMNS , KC_P1   , KC_P2   , KC_P3   , KC_BSPC ,                                                   XXXXXXX , KC_DLR  , KC_AT   , KC_LPRN , KC_RPRN , _______ ,
-      OSM_SFT , KC_PPLS , KC_EQL  , KC_P0   , KC_PDOT , KC_DEL  , XXXXXXX ,                               XXXXXXX , XXXXXXX , KC_TILD , KC_CIRC , KC_LBRC , KC_RBRC , _______ ,
+      KC_EXLM , KC_PSLS , KC_P7   , KC_P8   , KC_P9   , KC_C    , _______ ,                               _______ , _______ , KC_AMPR , KC_PIPE , KC_EXLM , KC_EQL  , _______ ,
+      KC_CIRC , KC_PAST , KC_P4   , KC_P5   , KC_P6   , KG_BSPC , _______ ,                               _______ , _______ , KC_HASH , KC_PERC , KC_LCBR , KC_RCBR , _______ ,
+      KC_ENT  , KC_PMNS , KC_P1   , KC_P2   , KC_P3   , KC_BSPC ,                                                   _______ , KC_DLR  , KC_AT   , KC_LPRN , KC_RPRN , _______ ,
+      OSM_SFT , KC_PPLS , KC_EQL  , KC_P0   , KC_PDOT , KC_DEL  , _______ ,                               _______ , _______ , KC_TILD , KC_CIRC , KC_LBRC , KC_RBRC , _______ ,
       _______ , KC_LPRN , KC_RPRN , KC_PI   , KC_COMM ,                                                                       KC_LABK , KC_PIPE , KC_PMNS , KC_RABK , _______ ,
-                                                                  XXXXXXX , RGB_VAI ,           RGB_HUI , XXXXXXX ,
+                                                                  _______ , RGB_VAI ,           RGB_HUI , _______ ,
                                                                             RGB_VAD ,           RGB_HUD ,
                                                         RGB_TOG , LAY_CLR , _______ ,           _______ , RGB_SLD , RGB_MOD
     ) , 
@@ -162,6 +162,38 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
 
   [2] = { 
     /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
+    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255}, {154, 255, 255},
+                     {249, 228, 255}, {249, 228, 255}, {249, 228, 255}, {0,   0,   255},
+
+    /* * * * * * * * * * * * * * * * * <--- Left hand * * * * * * * * * * * * * * * * */
+    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {249, 228, 255}, {249, 228, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
+                     {0,   0,   255}, {0,   0,   255}, {154, 255, 255}, {154, 255, 255}
+  },
+
+  [3] = { 
+    /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
+    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {249, 228, 255}, {249, 228, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
+                     {0,   0,   255}, {0,   0,   255}, {154, 255, 255}, {154, 255, 255},
+
+    /* * * * * * * * * * * * * * * * * <--- Left hand * * * * * * * * * * * * * * * * */
+    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
+    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255}, {154, 255, 255},
+                     {249, 228, 255}, {249, 228, 255}, {249, 228, 255}, {0,   0,   255}
+  },
+
+  [4] = { 
+    /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
     {141, 255, 233}, {141, 255, 233}, {141, 255, 233}, {141, 255, 233}, {141, 255, 233},
     {30,  96,  255}, {33,  255, 255}, {14,  255, 255}, {33,  255, 255}, {0,   0,   255},
     {30,  96,  255}, {14,  255, 255}, {14,  255, 255}, {14,  255, 255}, {0,   0,   255},
@@ -176,7 +208,7 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
                      {0,   135, 252}, {0,   173, 254}, {0,   210, 254}, {0,   255, 255}
   },
 
-  [3] = {
+  [5] = {
     /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
     {21,  255, 255}, {21,  204, 254}, {21,  162, 250}, {21,  124, 246}, {21,  86,  252},
     {16,  255, 255}, {16,  207, 246}, {16,  165, 250}, {16,  119, 252}, {16,  79,  254},
@@ -192,7 +224,7 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
                      {30,  96,  255}, {30,  96,  255}, {30,  96,  255}, {249, 228, 255}
   },
 
-  [4] = { 
+  [6] = { 
     /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
     {249, 228, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {154, 255, 255},
     {249, 176, 252}, {105, 193, 248}, {105, 193, 248}, {105, 193, 248}, {154, 189, 248},
@@ -208,7 +240,7 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
                      {204, 49,  242}, {204, 49,  242}, {204, 49,  242}, {204, 49,  242}
   },
 
-  [5] = { 
+  [7] = { 
     /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
     {0,   0,   0},   {205, 255, 255}, {205, 255, 255}, {205, 255, 255}, {205, 255, 255},
     {0,   0,   0},   {205, 200, 250}, {205, 200, 250}, {205, 200, 250}, {205, 200, 250},
@@ -222,38 +254,6 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][3] = {
     {248, 123, 254}, {105, 139, 250}, {105, 139, 250}, {105, 139, 250}, {154, 138, 250},
     {248, 87,  250}, {105, 83,  250}, {105, 83,  250}, {154, 85,  250}, {154, 85,  250},
                      {105, 83,  250}, {105, 83,  250}, {154, 85,  250}, {154, 85,  250}
-  },
-
-  [6] = { 
-    /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
-    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255}, {154, 255, 255},
-                     {249, 228, 255}, {249, 228, 255}, {249, 228, 255}, {0,   0,   255},
-
-    /* * * * * * * * * * * * * * * * * <--- Left hand * * * * * * * * * * * * * * * * */
-    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {249, 228, 255}, {249, 228, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
-                     {0,   0,   255}, {0,   0,   255}, {154, 255, 255}, {154, 255, 255}
-  },
-
-  [7] = { 
-    /* * * * * * * * * * * * * * * * * Right hand --> * * * * * * * * * * * * * * * * */
-    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {249, 228, 255}, {249, 228, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
-                     {0,   0,   255}, {0,   0,   255}, {154, 255, 255}, {154, 255, 255},
-
-    /* * * * * * * * * * * * * * * * * <--- Left hand * * * * * * * * * * * * * * * * */
-    {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255}, {105, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255}, {154, 255, 255},
-    {154, 255, 255}, {154, 255, 255}, {249, 228, 255}, {154, 255, 255}, {154, 255, 255},
-                     {249, 228, 255}, {249, 228, 255}, {249, 228, 255}, {0,   0,   255}
   },
 };
 
