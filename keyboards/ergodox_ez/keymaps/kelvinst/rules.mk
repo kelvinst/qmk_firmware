@@ -2,7 +2,7 @@
 # See rules at https://docs.qmk.fm/#/config_options?id=the-rulesmk-file
 LINK_TIME_OPTIMIZATION_ENABLE = yes
 LEADER_ENABLE = yes
-KEY_LOCK_ENABLE = yes
+KEY_LOCK_ENABLE = no
 SWAP_HANDS_ENABLE = no
 COMMAND_ENABLE = no
 AUTO_SHIFT_ENABLE = no
