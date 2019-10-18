@@ -13,14 +13,6 @@ enum custom_keycodes {
 #define OS_GUI OSM(MOD_LGUI)
 #define OS_ALT OSM(MOD_LALT)
 #define LAY_CLR TOGGLE_LAYER_COLOR
-#define KK_A SFT_T(KC_A)
-#define KK_S CTL_T(KC_S)
-#define KK_D ALT_T(KC_D)
-#define KK_F GUI_T(KC_F)    
-#define KK_J GUI_T(KC_J)
-#define KK_K ALT_T(KC_K)
-#define KK_L CTL_T(KC_L)
-#define KK_SCLN SFT_T(KC_SCLN)
 #define MC_REC1 DYN_REC_START1
 #define MC_PLY1 DYN_MACRO_PLAY1
 #define MC_REC2 DYN_REC_START2
@@ -48,13 +40,13 @@ enum custom_keycodes {
 
 #define _____________________BASE_L1___________________ KC_1    , KC_2    , KC_3    , KC_4    , KC_5
 #define _____________________BASE_L2___________________ KC_Q    , KC_W    , KC_E    , KC_R    , KC_T
-#define _____________________BASE_L3___________________ KK_A    , KK_S    , KK_D    , KK_F    , KC_G
+#define _____________________BASE_L3___________________ KC_A    , KC_S    , KC_D    , KC_F    , KC_G
 #define _____________________BASE_L4___________________ KC_Z    , KC_X    , KC_C    , KC_V    , KC_B   
 #define ________________BASE_L5______________           KC_GRV  , KC_QUOT , KC_LEFT , KC_RGHT
 
 #define _____________________BASE_R1___________________ KC_6    , KC_7    , KC_8    , KC_9    , KC_0   
 #define _____________________BASE_R2___________________ KC_Y    , KC_U    , KC_I    , KC_O    , KC_P   
-#define _____________________BASE_R3___________________ KC_H    , KK_J    , KK_K    , KK_L    , KK_SCLN
+#define _____________________BASE_R3___________________ KC_H    , KC_J    , KC_K    , KC_L    , KC_SCLN
 #define _____________________BASE_R4___________________ KC_N    , KC_M    , KC_COMM , KC_DOT  , KC_SLSH   
 #define           ________________BASE_R5______________           KC_DOWN , KC_UP   , KC_LBRC , KC_RBRC
 
