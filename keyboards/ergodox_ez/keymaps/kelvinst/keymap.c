@@ -12,13 +12,13 @@ enum custom_keycodes {
 #define OS_SFT OSM(MOD_LSFT)
 #define OS_GUI OSM(MOD_LGUI)
 #define OS_ALT OSM(MOD_LALT)
-#define LAY_CLR TOGGLE_LAYER_COLOR
 #define MC_REC1 DYN_REC_START1
 #define MC_PLY1 DYN_MACRO_PLAY1
 #define MC_REC2 DYN_REC_START2
 #define MC_PLY2 DYN_MACRO_PLAY2
 #define MC_STOP DYN_REC_STOP
 #define KC_PI LALT(KC_P)
+#define MT_RSBS MT(MOD_LSFT, KC_BSLS)
 
 #define BASE 0
 #define RBSE 1
@@ -29,7 +29,6 @@ enum custom_keycodes {
 #define SYMB 6
 #define RSMB 7
 
-#define OS_BASE OSL(BASE)
 #define OS_RBSE OSL(RBSE)
 #define OS_GAME OSL(GAME)
 #define OS_RGME OSL(RGME)
@@ -96,8 +95,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_ESC  , _____________________BASE_L1___________________ , OS_GAME ,           OS_GAME , _____________________BASE_R1___________________ , KC_MINS ,
       KC_TAB  , _____________________BASE_L2___________________ , OS_MOUS ,           OS_MOUS , _____________________BASE_R2___________________ , KC_EQL  , 
       OS_CTL  , _____________________BASE_L3___________________ ,                               _____________________BASE_R3___________________ , KC_ENT  , 
-      OS_SFT  , _____________________BASE_L4___________________ , OS_SYMB ,           OS_SYMB , _____________________BASE_R4___________________ , KC_BSLS ,
-      KC_LEAD , ________________BASE_L5______________ ,                                                   ________________BASE_R5______________ , KC_LEAD , 
+      OS_SFT  , _____________________BASE_L4___________________ , OS_SYMB ,           OS_SYMB , _____________________BASE_R4___________________ , MT_RSBS ,
+      OS_RBSE , ________________BASE_L5______________ ,                                                   ________________BASE_R5______________ , OS_RBSE , 
                                                         KC_INS  , KC_HOME ,           KC_PGUP , KC_DEL  , 
                                                                   KC_END  ,           KC_PGDN , 
                                               OS_GUI  , OS_ALT  , OS_RBSE ,           OS_RBSE , KC_BSPC , KC_SPC
@@ -107,8 +106,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_MINS , _____________________BASE_R1___________________ , _______ ,           _______ , _____________________BASE_L1___________________ , KC_ESC  , 
       KC_EQL  , _____________________BASE_R2___________________ , _______ ,           _______ , _____________________BASE_L2___________________ , KC_TAB  , 
       KC_ENT  , _____________________BASE_R3___________________ ,                               _____________________BASE_L3___________________ , OS_CTL  , 
-      KC_BSLS , _____________________BASE_R4___________________ , _______ ,           _______ , _____________________BASE_L4___________________ , OS_SFT  , 
-      KC_LEAD , ________________BASE_R5______________ ,                                                   ________________BASE_L5______________ , KC_LEAD , 
+      MT_RSBS , _____________________BASE_R4___________________ , _______ ,           _______ , _____________________BASE_L4___________________ , OS_SFT  , 
+      _______ , ________________BASE_R5______________ ,                                                   ________________BASE_L5______________ , _______ , 
                                                         KC_DEL  , KC_PGUP ,           KC_HOME , KC_INS  , 
                                                                   KC_PGDN ,           KC_END  ,
                                               KC_SPC  , KC_BSPC , _______ ,           _______ , OS_ALT  , OS_GUI
@@ -119,10 +118,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_TAB  , _____________________GAME_L2___________________ , _______ ,           _______ , _____________________GAME_R2___________________ , KC_EQL  ,
       KC_LCTL , _____________________GAME_L3___________________ ,                               _____________________GAME_R3___________________ , KC_BSLS ,
       KC_LSFT , _____________________GAME_L4___________________ , _______ ,           _______ , _____________________GAME_R4___________________ , KC_SLSH ,
-      KC_LBRC , ________________GAME_L5______________ ,                                                   ________________GAME_R5______________ , KC_RBRC ,
+      OS_RGME , ________________GAME_L5______________ ,                                                   ________________GAME_R5______________ , OS_RGME ,
                                                         KC_INS  , KC_HOME ,           KC_PGUP , KC_DEL  ,
                                                                   KC_END  ,           KC_PGDN ,
-                                              KC_SPC  , KC_ENT  , OSL(3)  ,           OSL(3)  , KC_BSPC , KC_SPC
+                                              KC_SPC  , KC_ENT  , KC_LBRC ,           KC_RBRC , KC_BSPC , KC_SPC
     ) , 
 
   [RGME] = LAYOUT_ergodox_pretty_wrapper(
@@ -130,10 +129,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       KC_EQL  , _____________________GAME_R2___________________ , _______ ,           _______ , _____________________GAME_L2___________________ , KC_TAB  ,
       KC_BSLS , _____________________GAME_R3___________________ ,                               _____________________GAME_L3___________________ , KC_LCTL ,
       KC_SLSH , _____________________GAME_R4___________________ , _______ ,           _______ , _____________________GAME_L4___________________ , KC_LSFT ,
-      KC_RBRC , ________________RGME_L5______________ ,                                                   ________________GAME_L5______________ , KC_LBRC ,
+      _______ , ________________RGME_L5______________ ,                                                   ________________GAME_L5______________ , _______ ,
                                                         KC_DEL  , KC_PGUP ,           KC_HOME , KC_INS  ,
                                                                   KC_PGDN ,           KC_END  ,
-                                              KC_SPC  , KC_BSPC , _______ ,           _______ , KC_ENT , KC_SPC
+                                              KC_SPC  , KC_BSPC , KC_RBRC ,           KC_LBRC , KC_ENT , KC_SPC
     ) , 
 
   [MOUS] = LAYOUT_ergodox_pretty_wrapper(
@@ -141,10 +140,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______ , _____________________MOUS_L2___________________ , _______ ,           _______ , _____________________MOUS_R2___________________ , _______ ,
       _______ , _____________________MOUS_L3___________________ ,                               _____________________MOUS_R3___________________ , _______ ,
       _______ , _____________________MOUS_L4___________________ , _______ ,           _______ , _____________________MOUS_R4___________________ , _______ ,
-      _______ , ________________MOUS_L5______________ ,                                                   ________________MOUS_R5______________ , _______ ,
-                                                        _______ , _______ ,           KC_BTN5 , KC_BTN4 ,
-                                                                  KC_ACL0 ,           KC_BTN3 ,
-                                              KC_ACL2 , KC_ACL1 , OSL(5)  ,           OSL(5)  , KC_BTN2 , KC_BTN1
+      OS_RMUS , ________________MOUS_L5______________ ,                                                   ________________MOUS_R5______________ , OS_RMUS ,
+                                                        _______ , _______ ,           KC_BTN5 , _______ ,
+                                                                  _______ ,           KC_BTN4 ,
+                                              KC_ACL2 , KC_ACL1 , KC_ACL0 ,           KC_BTN3 , KC_BTN2 , KC_BTN1
     ) , 
 
   [RMUS] = LAYOUT_ergodox_pretty_wrapper(
@@ -153,9 +152,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______ , _____________________MOUS_R3___________________ ,                               _____________________MOUS_L3___________________ , _______ ,
       _______ , _____________________MOUS_R4___________________ , _______ ,           _______ , _____________________MOUS_L4___________________ , _______ ,
       _______ , ________________RMUS_L5______________ ,                                                   ________________MOUS_L5______________ , _______ ,
-                                                        KC_BTN4 , KC_BTN5 ,           _______ , _______ , 
-                                                                  KC_BTN3 ,           KC_ACL0 , 
-                                              KC_BTN1 , KC_BTN2 , _______ ,           _______ , KC_ACL1 , KC_ACL2
+                                                        _______ , KC_BTN5 ,           _______ , _______ , 
+                                                                  KC_BTN4 ,           _______ , 
+                                              KC_BTN1 , KC_BTN2 , KC_BTN3 ,           KC_ACL0 , KC_ACL1 , KC_ACL2
     ) , 
 
   [SYMB] = LAYOUT_ergodox_pretty_wrapper(
@@ -163,10 +162,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       _______ , ________________SYMB_L2______________ , _______ , _______ ,           _______ , _____________________SYMB_R2___________________ , _______ ,
       _______ , ________________SYMB_L3______________ , _______ ,                               _____________________SYMB_R3___________________ , _______ ,
       _______ , ________________SYMB_L4______________ , _______ , _______ ,           _______ , _____________________SYMB_R4___________________ , _______ ,
-      _______ , ________________SYMB_L5______________ ,                                                   _______ , _______ , _______ , _______ , _______ ,
+      OS_RSMB , ________________SYMB_L5______________ ,                                                   _______ , _______ , _______ , _______ , OS_RSMB ,
                                                         _______ , _______ ,           _______ , _______ ,
                                                                   _______ ,           _______ ,
-                                              _______ , _______ , OSL(7)  ,           OSL(7)  , _______ , _______
+                                              _______ , _______ , OS_RSMB ,           OS_RSMB , _______ , _______
     ),
 
   [RSMB] = LAYOUT_ergodox_pretty_wrapper(
@@ -442,19 +441,7 @@ void switch_mod_led(uint8_t mods) {
   ledb(3, !!mods, count_bits(mods) * step * 2);
 };
 
-LEADER_EXTERNS();
-
 // Runs constantly in the background, in a loop.
 void matrix_scan_user(void) {
   switch_mod_led(keyboard_report->mods | get_oneshot_mods());
-
-  LEADER_DICTIONARY() {
-    leading = false;
-
-    SEQ_ONE_KEY(KC_F) {
-      SEND_STRING("QMK is awesome.");
-    }
-    
-    leader_end();
-  }
 };
